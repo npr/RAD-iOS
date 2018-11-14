@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="eventTime" attributeType="String" syncable="YES"/>
+        <attribute name="md5" attributeType="String" syncable="YES"/>
+        <attribute name="otherFields" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="dates" toMany="YES" deletionRule="Cascade" destinationEntity="TimezonedDate" inverseName="event" inverseEntity="TimezonedDate" syncable="YES"/>
+    </entity>
+    <entity name="ItemSession" representedClassName="ItemSession" syncable="YES">
+        <attribute name="isActive" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="playbackRanges" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Range" inverseName="itemSession" inverseEntity="Range" syncable="YES"/>
+        <relationship name="sessionId" maxCount="1" deletionRule="Nullify" destinationEntity="ItemSessionID" inverseName="itemSessions" inverseEntity="ItemSessionID" syncable="YES"/>
+    </entity>
+    <entity name="ItemSessionID" representedClassName="ItemSessionID" syncable="YES">
+        <attribute name="creationIntervalSince1970" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="isLocked" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="itemSessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemSession" inverseName="sessionId" inverseEntity="ItemSession" syncable="YES"/>
+        <relationship name="rad" maxCount="1" deletionRule="Nullify" destinationEntity="Rad" inverseName="itemSessionIds" inverseEntity="Rad" syncable="YES"/>
+    </entity>
+    <entity name="MetadataRelation" representedClassName="MetadataRelation" syncable="YES">
+        <attribute name="sessionId" attributeType="String" syncable="YES"/>
+        <relationship name="dates" toMany="YES" deletionRule="Nullify" destinationEntity="TimezonedDate" inverseName="metadataRelations" inverseEntity="TimezonedDate" syncable="YES"/>
+        <relationship name="radMetadata" maxCount="1" deletionRule="Nullify" destinationEntity="RadMetadata" inverseName="metadataRelations" inverseEntity="RadMetadata" syncable="YES"/>
+        <relationship name="server" maxCount="1" deletionRule="Nullify" destinationEntity="Server" inverseName="metadataRelations" inverseEntity="Server" syncable="YES"/>
+    </entity>
+    <entity name="Rad" representedClassName="Rad" syncable="YES">
+        <attribute name="isLocked" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="json" attributeType="String" syncable="YES"/>
+        <attribute name="md5" attributeType="String" syncable="YES"/>
+        <relationship name="itemSessionIds" toMany="YES" deletionRule="Nullify" destinationEntity="ItemSessionID" inverseName="rad" inverseEntity="ItemSessionID" syncable="YES"/>
+    </entity>
+    <entity name="RadMetadata" representedClassName="RadMetadata" syncable="YES">
+        <attribute name="md5" attributeType="String" syncable="YES"/>
+        <attribute name="otherFields" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="metadataRelations" toMany="YES" deletionRule="Nullify" destinationEntity="MetadataRelation" inverseName="radMetadata" inverseEntity="MetadataRelation" syncable="YES"/>
+    </entity>
+    <entity name="Range" representedClassName="Range" syncable="YES">
+        <relationship name="end" maxCount="1" deletionRule="Cascade" destinationEntity="RangeBound" inverseName="rangeForEnd" inverseEntity="RangeBound" syncable="YES"/>
+        <relationship name="itemSession" maxCount="1" deletionRule="Nullify" destinationEntity="ItemSession" inverseName="playbackRanges" inverseEntity="ItemSession" syncable="YES"/>
+        <relationship name="start" maxCount="1" deletionRule="Cascade" destinationEntity="RangeBound" inverseName="rangeForStart" inverseEntity="RangeBound" syncable="YES"/>
+    </entity>
+    <entity name="RangeBound" representedClassName="RangeBound" syncable="YES">
+        <attribute name="playerTimeValue" attributeType="Transformable" syncable="YES"/>
+        <relationship name="date" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TimezonedDate" inverseName="rangeBound" inverseEntity="TimezonedDate" syncable="YES"/>
+        <relationship name="rangeForEnd" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Range" inverseName="end" inverseEntity="Range" syncable="YES"/>
+        <relationship name="rangeForStart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Range" inverseName="start" inverseEntity="Range" syncable="YES"/>
+    </entity>
+    <entity name="Server" representedClassName="Server" syncable="YES">
+        <attribute name="trackingUrl" attributeType="String" syncable="YES"/>
+        <relationship name="metadataRelations" toMany="YES" deletionRule="Nullify" destinationEntity="MetadataRelation" inverseName="server" inverseEntity="MetadataRelation" syncable="YES"/>
+    </entity>
+    <entity name="TimezonedDate" representedClassName="TimezonedDate" syncable="YES">
+        <attribute name="intervalSince1970" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timezoneOffset" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="dates" inverseEntity="Event" syncable="YES"/>
+        <relationship name="metadataRelations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetadataRelation" inverseName="dates" inverseEntity="MetadataRelation" syncable="YES"/>
+        <relationship name="rangeBound" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RangeBound" inverseName="date" inverseEntity="RangeBound" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-65" positionY="27" width="128" height="105"/>
+        <element name="ItemSession" positionX="-668" positionY="132" width="128" height="88"/>
+        <element name="ItemSessionID" positionX="-684" positionY="-76" width="128" height="118"/>
+        <element name="MetadataRelation" positionX="-308" positionY="66" width="128" height="103"/>
+        <element name="Rad" positionX="-990" positionY="-72" width="128" height="103"/>
+        <element name="RadMetadata" positionX="-324" positionY="-126" width="128" height="90"/>
+        <element name="Range" positionX="-650" positionY="279" width="128" height="88"/>
+        <element name="RangeBound" positionX="-342" positionY="270" width="128" height="105"/>
+        <element name="Server" positionX="-558" positionY="-225" width="128" height="75"/>
+        <element name="TimezonedDate" positionX="-81" positionY="264" width="128" height="118"/>
+    </elements>
+</model>

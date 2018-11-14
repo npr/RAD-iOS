@@ -1,0 +1,69 @@
+{
+    "remoteAudioData": {
+        "trackingUrl": "https://tracking.npr.org/tracking_podcasts",
+        "events": [
+            {
+                "eventTime": "00:00:00.000",
+                "adId": 0,
+                "eventNum": 0,
+                "creativeId": 0,
+                "label": "podcastDownload",
+                "adPosition": 0,
+                "geolocation": {
+                    "longitude": "38.90425",
+                    "latitude": "-77.00906"
+                }
+            },
+            {
+                "eventTime": "00:00:00.100",
+                "adId": 0,
+                "eventNum": 1,
+                "creativeId": 0,
+                "label": "podcastStart",
+                "adPosition": 0,
+                "geolocation": {
+                    "longitude": "38.90425",
+                    "latitude": "-77.00906"
+                }
+            },
+            {
+                "eventTime": "00:00:00.300",
+                "adId": 111126,
+                "eventNum": 2,
+                "creativeId": 1111130,
+                "label": "adStart",
+                "adPosition": 1,
+                "geolocation": {
+                    "longitude": "38.90425",
+                    "latitude": "-77.00906"
+                }
+            },
+            {
+                "eventTime": "00:00:00.600",
+                "adId": 111126,
+                "eventNum": 3,
+                "creativeId": 1111130,
+                "label": "adEnd",
+                "adPosition": 1,
+                "geolocation": {
+                    "longitude": "38.90425",
+                    "latitude": "-77.00906"
+                }
+            },
+            {
+                "eventTime": "00:00:01.000",
+                "adId": 0,
+                "eventNum": 10,
+                "creativeId": 0,
+                "label": "podcast98",
+                "adPosition": 0,
+                "geolocation": {
+                    "longitude": "38.90425",
+                    "latitude": "-77.00906"
+                }
+            }
+        ],
+        "episodeId": 522078513,
+        "podcastId": 510298
+    }
+}

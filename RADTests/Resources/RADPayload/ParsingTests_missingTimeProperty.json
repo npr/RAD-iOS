@@ -1,0 +1,16 @@
+{
+    "remoteAudioData": {
+        "trackingUrl": "https://tracking.npr.org/tracking_podcasts",
+        "events": [
+            {
+                "label": "podcastEvent",
+                "eventNum": 1,
+                "creativeId": 0,
+                "adId": 0,
+                "adPosition": 0
+            }
+        ],
+        "episodeId": 522078513,
+        "podcastId": 510298
+    }
+}
