@@ -7,7 +7,7 @@ To directly contribute to the development and extension of Remote Audio Data, yo
     * Clone the repository on your own machine.
     * Develop unit tests for the new implementation. (Please make sure the existing unit tests are passing.) Update existing unit tests if necessary.
     * Commit and push changes on your own branch.
-    * Create a merge request.
+    * Create a Pull Request.
     * We’ll review and be in touch.
 
 Please always feel free to contact us at remoteaudiodata@npr.org if you prefer to correspond via email.
