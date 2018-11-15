@@ -40,7 +40,7 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
 
         OHHTTPStubs.stubRequests(passingTest: { request -> Bool in
             return request.url?.absoluteString == "https://www.npr.org"
-        }, withStubResponse: { request -> OHHTTPStubsResponse in
+        }, withStubResponse: { _ -> OHHTTPStubsResponse in
             return OHHTTPStubsResponse(
                 jsonObject: [:], statusCode: 200, headers: nil)
         })
