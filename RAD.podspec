@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "RAD"
-  s.version       = "1.0.0"
+  s.version       = "1.0.1"
   s.summary       = "The RAD SDK is a great starting place to learn more about how a RAD implementation might work in your client app."
 
   s.description   = "Remote Audio Data (RAD) measures podcast listening across a range of participating clients and platforms, aggregating the data in a publishers’ analytics endpoint. RAD is not intended to replace download statistics as a point of measurement for the on-demand audio industry, but is designed to provide data on listening events to complement this download statistics.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author        = { "NPR" => "remoteaudiodata@npr.org" }
   s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/npr/RAD-iOS.git", :tag => "#{s.version}" }
-  s.source_files  = "RAD/**/*.{h,m, swift}"
+  s.source_files  = "RAD/**/*.{h,m,swift}"
   s.resource      = "RAD/Model/RADDatabaseModel.xcdatamodeld"
   s.frameworks    = "Foundation", "AVFoundation", "CoreMedia", "CoreData"
   s.dependency "ReachabilitySwift"
