@@ -25,7 +25,7 @@ class AnalyticsTestSuite: AnalyticsTestCase {
         analytics.startSendingData()
 
         guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls",
+            forResource: "1_000Events",
             withExtension: "mp3"
         ) else {
             XCTFail("Resource is not available.")

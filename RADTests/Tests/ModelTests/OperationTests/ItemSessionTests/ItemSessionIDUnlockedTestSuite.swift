@@ -23,7 +23,7 @@ class ItemSessionIDUnlockedTestSuite: AnalyticsTestCase,
 RADExtractionTestCase {
     func testCaseFor_sessionIDIsUnlocked_duringPlayback() {
         guard let url = Bundle.testBundle.url(
-            forResource: "60Events2TrackingUrls",
+            forResource: "60Events",
             withExtension: "mp3"
             ) else {
                 XCTFail("Resource not available.")
@@ -53,7 +53,7 @@ RADExtractionTestCase {
 
     func testCaseFor_sessionIDIsUnlocked_afterPlayback() {
         guard let url = Bundle.testBundle.url(
-            forResource: "80Events2TrackingUrls",
+            forResource: "80Events",
             withExtension: "mp3"
         ) else {
             XCTFail("Resource not available.")

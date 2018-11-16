@@ -63,7 +63,7 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
 
     func testCaseFor_itemSessionIsInactiveAfterPlayback() {
         guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls",
+            forResource: "1_000Events",
             withExtension: "mp3"
         ) else {
                 XCTFail("Resource not available.")

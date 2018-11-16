@@ -30,6 +30,15 @@
 		FF062A68213553FB0063C5E8 /* WeakReferenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF062A67213553FB0063C5E8 /* WeakReferenceContainer.swift */; };
 		FF062A6A213573880063C5E8 /* ScheduleDataSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF062A69213573880063C5E8 /* ScheduleDataSend.swift */; };
 		FF062A6C213575950063C5E8 /* SendDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF062A6B213575950063C5E8 /* SendDataOperation.swift */; };
+		FF0777CD219F0741000C63CC /* 50Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C4219F0741000C63CC /* 50Events.mp3 */; };
+		FF0777CE219F0741000C63CC /* 480Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C5219F0741000C63CC /* 480Events.mp3 */; };
+		FF0777CF219F0741000C63CC /* 60Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C6219F0741000C63CC /* 60Events.mp3 */; };
+		FF0777D0219F0741000C63CC /* 180Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C7219F0741000C63CC /* 180Events.mp3 */; };
+		FF0777D1219F0741000C63CC /* 100Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C8219F0741000C63CC /* 100Events.mp3 */; };
+		FF0777D2219F0741000C63CC /* 1_000Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777C9219F0741000C63CC /* 1_000Events.mp3 */; };
+		FF0777D3219F0741000C63CC /* 360Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CA219F0741000C63CC /* 360Events.mp3 */; };
+		FF0777D4219F0741000C63CC /* 240Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CB219F0741000C63CC /* 240Events.mp3 */; };
+		FF0777D5219F0741000C63CC /* 80Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CC219F0741000C63CC /* 80Events.mp3 */; };
 		FF0ACB3920EE099700B454E4 /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3820EE099700B454E4 /* Event+Convenience.swift */; };
 		FF0ACB3B20EE09A700B454E4 /* RadMetadata+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3A20EE09A700B454E4 /* RadMetadata+Convenience.swift */; };
 		FF0ACB3D20EE09BF00B454E4 /* Server+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3C20EE09BF00B454E4 /* Server+Convenience.swift */; };
@@ -37,8 +46,6 @@
 		FF0ACB4A20EE4EC900B454E4 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB4920EE4EC900B454E4 /* HttpStatusCode.swift */; };
 		FF0ACB4D20EE69F400B454E4 /* HttpStatusCodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB4C20EE69F400B454E4 /* HttpStatusCodeList.swift */; };
 		FF0ACB4F20EE6A7F00B454E4 /* HttpStatusCodeMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB4E20EE6A7F00B454E4 /* HttpStatusCodeMapping.swift */; };
-		FF0E08342191960D003EA672 /* 80Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0E08322191960C003EA672 /* 80Events2TrackingUrls.mp3 */; };
-		FF0E08352191960D003EA672 /* 60Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0E08332191960C003EA672 /* 60Events2TrackingUrls.mp3 */; };
 		FF0ECF442179C8AC009C5528 /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ECF432179C8AC009C5528 /* Roundable.swift */; };
 		FF0ECF472179C8D8009C5528 /* UnitDuration+Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ECF462179C8D8009C5528 /* UnitDuration+Roundable.swift */; };
 		FF0F5A75215A22CD00FEF83F /* TimezonedDate+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0F5A74215A22CD00FEF83F /* TimezonedDate+Convenience.swift */; };
@@ -56,8 +63,6 @@
 		FF12407E21884BBC00EA1060 /* FetchOperationTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12407D21884BBC00EA1060 /* FetchOperationTestSuite.swift */; };
 		FF12408021884F3700EA1060 /* ContextTrasnferFetchTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12407F21884F3700EA1060 /* ContextTrasnferFetchTestSuite.swift */; };
 		FF12408221885FB900EA1060 /* TimeRangeControllerTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12408121885FB900EA1060 /* TimeRangeControllerTestSuite.swift */; };
-		FF1240862188937800EA1060 /* 100Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1240842188937700EA1060 /* 100Events2TrackingUrls.mp3 */; };
-		FF1240872188937800EA1060 /* 50Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1240852188937800EA1060 /* 50Events2TrackingUrls.mp3 */; };
 		FF1240892188A80E00EA1060 /* PlayerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1240882188A80E00EA1060 /* PlayerTestCase.swift */; };
 		FF12408B2188A83100EA1060 /* TimeRangeCreationExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12408A2188A83100EA1060 /* TimeRangeCreationExpectation.swift */; };
 		FF12408D2188A83E00EA1060 /* ItemDidPlayToEndExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12408C2188A83E00EA1060 /* ItemDidPlayToEndExpectation.swift */; };
@@ -168,7 +173,6 @@
 		FF5D6F7E218C57EB00A3B8FF /* RangeCreationExpectationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D6F7D218C57EB00A3B8FF /* RangeCreationExpectationBuilder.swift */; };
 		FF5D6F80218C57FA00A3B8FF /* TimeRangeControllerEndOfFileTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D6F7F218C57FA00A3B8FF /* TimeRangeControllerEndOfFileTestCase.swift */; };
 		FF5D6F82218C6A4800A3B8FF /* 1_000_Events.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5D6F81218C6A4800A3B8FF /* 1_000_Events.json */; };
-		FF5D6F84218C6A5100A3B8FF /* 1_000Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF5D6F83218C6A5100A3B8FF /* 1_000Events2TrackingUrls.mp3 */; };
 		FF5D6F88218C80E000A3B8FF /* ItemSessionInactiveTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5D6F87218C80E000A3B8FF /* ItemSessionInactiveTestSuite.swift */; };
 		FF60BD172153D1370001595C /* AsyncClosureInputOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF60BD162153D1370001595C /* AsyncClosureInputOperation.swift */; };
 		FF6CEF1920D7A887000661B1 /* ParsingTests_eventTimeWrongFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = FF6CEF0C20D7A887000661B1 /* ParsingTests_eventTimeWrongFormat.json */; };
@@ -202,8 +206,6 @@
 		FF9F142C2121A95500D1C39E /* TimeRangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F142B2121A95500D1C39E /* TimeRangeController.swift */; };
 		FF9F14352121B66500D1C39E /* RangeBound+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F14332121B66400D1C39E /* RangeBound+CoreDataClass.swift */; };
 		FF9F14362121B66500D1C39E /* RangeBound+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F14342121B66400D1C39E /* RangeBound+CoreDataProperties.swift */; };
-		FFA0C1A92191E66E00D684AA /* 180Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFA0C1A72191E66E00D684AA /* 180Events2TrackingUrls.mp3 */; };
-		FFA0C1AA2191E66E00D684AA /* 240Events2TrackingUrls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFA0C1A82191E66E00D684AA /* 240Events2TrackingUrls.mp3 */; };
 		FFA0C1AD2191EC0D00D684AA /* AnalyticsDebuggerExtractPayloadTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0C1AC2191EC0D00D684AA /* AnalyticsDebuggerExtractPayloadTestCase.swift */; };
 		FFA0C1AF2191FEE000D684AA /* AnalyticsTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0C1AE2191FEE000D684AA /* AnalyticsTestSuite.swift */; };
 		FFA0C1B1219207D100D684AA /* MD5Checkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0C1B0219207D100D684AA /* MD5Checkable.swift */; };
@@ -289,6 +291,15 @@
 		FF062A67213553FB0063C5E8 /* WeakReferenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceContainer.swift; sourceTree = "<group>"; };
 		FF062A69213573880063C5E8 /* ScheduleDataSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataSend.swift; sourceTree = "<group>"; };
 		FF062A6B213575950063C5E8 /* SendDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataOperation.swift; sourceTree = "<group>"; };
+		FF0777C4219F0741000C63CC /* 50Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 50Events.mp3; sourceTree = "<group>"; };
+		FF0777C5219F0741000C63CC /* 480Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 480Events.mp3; sourceTree = "<group>"; };
+		FF0777C6219F0741000C63CC /* 60Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 60Events.mp3; sourceTree = "<group>"; };
+		FF0777C7219F0741000C63CC /* 180Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 180Events.mp3; sourceTree = "<group>"; };
+		FF0777C8219F0741000C63CC /* 100Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 100Events.mp3; sourceTree = "<group>"; };
+		FF0777C9219F0741000C63CC /* 1_000Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_000Events.mp3; sourceTree = "<group>"; };
+		FF0777CA219F0741000C63CC /* 360Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 360Events.mp3; sourceTree = "<group>"; };
+		FF0777CB219F0741000C63CC /* 240Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 240Events.mp3; sourceTree = "<group>"; };
+		FF0777CC219F0741000C63CC /* 80Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 80Events.mp3; sourceTree = "<group>"; };
 		FF0ACB3820EE099700B454E4 /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		FF0ACB3A20EE09A700B454E4 /* RadMetadata+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadMetadata+Convenience.swift"; sourceTree = "<group>"; };
 		FF0ACB3C20EE09BF00B454E4 /* Server+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server+Convenience.swift"; sourceTree = "<group>"; };
@@ -296,8 +307,6 @@
 		FF0ACB4920EE4EC900B454E4 /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		FF0ACB4C20EE69F400B454E4 /* HttpStatusCodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodeList.swift; sourceTree = "<group>"; };
 		FF0ACB4E20EE6A7F00B454E4 /* HttpStatusCodeMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodeMapping.swift; sourceTree = "<group>"; };
-		FF0E08322191960C003EA672 /* 80Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 80Events2TrackingUrls.mp3; sourceTree = "<group>"; };
-		FF0E08332191960C003EA672 /* 60Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 60Events2TrackingUrls.mp3; sourceTree = "<group>"; };
 		FF0ECF432179C8AC009C5528 /* Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
 		FF0ECF462179C8D8009C5528 /* UnitDuration+Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitDuration+Roundable.swift"; sourceTree = "<group>"; };
 		FF0F5A74215A22CD00FEF83F /* TimezonedDate+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimezonedDate+Convenience.swift"; sourceTree = "<group>"; };
@@ -315,8 +324,6 @@
 		FF12407D21884BBC00EA1060 /* FetchOperationTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchOperationTestSuite.swift; sourceTree = "<group>"; };
 		FF12407F21884F3700EA1060 /* ContextTrasnferFetchTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTrasnferFetchTestSuite.swift; sourceTree = "<group>"; };
 		FF12408121885FB900EA1060 /* TimeRangeControllerTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeControllerTestSuite.swift; sourceTree = "<group>"; };
-		FF1240842188937700EA1060 /* 100Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 100Events2TrackingUrls.mp3; sourceTree = "<group>"; };
-		FF1240852188937800EA1060 /* 50Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 50Events2TrackingUrls.mp3; sourceTree = "<group>"; };
 		FF1240882188A80E00EA1060 /* PlayerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTestCase.swift; sourceTree = "<group>"; };
 		FF12408A2188A83100EA1060 /* TimeRangeCreationExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeCreationExpectation.swift; sourceTree = "<group>"; };
 		FF12408C2188A83E00EA1060 /* ItemDidPlayToEndExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDidPlayToEndExpectation.swift; sourceTree = "<group>"; };
@@ -427,7 +434,6 @@
 		FF5D6F7D218C57EB00A3B8FF /* RangeCreationExpectationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCreationExpectationBuilder.swift; sourceTree = "<group>"; };
 		FF5D6F7F218C57FA00A3B8FF /* TimeRangeControllerEndOfFileTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeControllerEndOfFileTestCase.swift; sourceTree = "<group>"; };
 		FF5D6F81218C6A4800A3B8FF /* 1_000_Events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1_000_Events.json; sourceTree = "<group>"; };
-		FF5D6F83218C6A5100A3B8FF /* 1_000Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_000Events2TrackingUrls.mp3; sourceTree = "<group>"; };
 		FF5D6F87218C80E000A3B8FF /* ItemSessionInactiveTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSessionInactiveTestSuite.swift; sourceTree = "<group>"; };
 		FF60BD162153D1370001595C /* AsyncClosureInputOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncClosureInputOperation.swift; sourceTree = "<group>"; };
 		FF6CEF0C20D7A887000661B1 /* ParsingTests_eventTimeWrongFormat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ParsingTests_eventTimeWrongFormat.json; sourceTree = "<group>"; };
@@ -461,8 +467,6 @@
 		FF9F142B2121A95500D1C39E /* TimeRangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeController.swift; sourceTree = "<group>"; };
 		FF9F14332121B66400D1C39E /* RangeBound+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeBound+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FF9F14342121B66400D1C39E /* RangeBound+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeBound+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FFA0C1A72191E66E00D684AA /* 180Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 180Events2TrackingUrls.mp3; sourceTree = "<group>"; };
-		FFA0C1A82191E66E00D684AA /* 240Events2TrackingUrls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 240Events2TrackingUrls.mp3; sourceTree = "<group>"; };
 		FFA0C1AC2191EC0D00D684AA /* AnalyticsDebuggerExtractPayloadTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDebuggerExtractPayloadTestCase.swift; sourceTree = "<group>"; };
 		FFA0C1AE2191FEE000D684AA /* AnalyticsTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTestSuite.swift; sourceTree = "<group>"; };
 		FFA0C1B0219207D100D684AA /* MD5Checkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Checkable.swift; sourceTree = "<group>"; };
@@ -853,13 +857,15 @@
 		FF6CEF1120D7A887000661B1 /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
-				FF1240852188937800EA1060 /* 50Events2TrackingUrls.mp3 */,
-				FF0E08332191960C003EA672 /* 60Events2TrackingUrls.mp3 */,
-				FF0E08322191960C003EA672 /* 80Events2TrackingUrls.mp3 */,
-				FF1240842188937700EA1060 /* 100Events2TrackingUrls.mp3 */,
-				FFA0C1A72191E66E00D684AA /* 180Events2TrackingUrls.mp3 */,
-				FFA0C1A82191E66E00D684AA /* 240Events2TrackingUrls.mp3 */,
-				FF5D6F83218C6A5100A3B8FF /* 1_000Events2TrackingUrls.mp3 */,
+				FF0777C9219F0741000C63CC /* 1_000Events.mp3 */,
+				FF0777C4219F0741000C63CC /* 50Events.mp3 */,
+				FF0777C6219F0741000C63CC /* 60Events.mp3 */,
+				FF0777CC219F0741000C63CC /* 80Events.mp3 */,
+				FF0777C8219F0741000C63CC /* 100Events.mp3 */,
+				FF0777C7219F0741000C63CC /* 180Events.mp3 */,
+				FF0777CB219F0741000C63CC /* 240Events.mp3 */,
+				FF0777CA219F0741000C63CC /* 360Events.mp3 */,
+				FF0777C5219F0741000C63CC /* 480Events.mp3 */,
 				FF6CEF1220D7A887000661B1 /* no_URL_available.m4a */,
 				FF6CEF1720D7A887000661B1 /* no_RAD_medata.m4a */,
 				FF6CEF2520D7C2C9000661B1 /* RAD_events.m4a */,
@@ -1266,26 +1272,28 @@
 			files = (
 				FF6CEF1F20D7A887000661B1 /* RAD_events_properties_not_available.m4a in Resources */,
 				FF5D6F7A218C561100A3B8FF /* small_audio_file.m4a in Resources */,
-				FF1240862188937800EA1060 /* 100Events2TrackingUrls.mp3 in Resources */,
+				FF0777D2219F0741000C63CC /* 1_000Events.mp3 in Resources */,
+				FF0777D0219F0741000C63CC /* 180Events.mp3 in Resources */,
 				FF6CEF2220D7A887000661B1 /* RAD_time_wrong_format.m4a in Resources */,
 				FF5D6F82218C6A4800A3B8FF /* 1_000_Events.json in Resources */,
 				FF6CEF1B20D7A887000661B1 /* ParsingTests_extraProperties.json in Resources */,
 				FF6CEF1E20D7A887000661B1 /* no_URL_available.m4a in Resources */,
 				FF6CEF1920D7A887000661B1 /* ParsingTests_eventTimeWrongFormat.json in Resources */,
-				FFA0C1A92191E66E00D684AA /* 180Events2TrackingUrls.mp3 in Resources */,
 				FF6CEF1C20D7A887000661B1 /* ParsingTests_noURL.json in Resources */,
-				FF0E08352191960D003EA672 /* 60Events2TrackingUrls.mp3 in Resources */,
 				FF6CEF2020D7A887000661B1 /* RAD_extra_properties.m4a in Resources */,
 				FF6CEF1D20D7A887000661B1 /* ParsingTests_mispelledProperty.json in Resources */,
 				FF6CEF2420D7A887000661B1 /* RAD_metadata_properties_incorrectly_spelled.m4a in Resources */,
-				FFA0C1AA2191E66E00D684AA /* 240Events2TrackingUrls.mp3 in Resources */,
+				FF0777D5219F0741000C63CC /* 80Events.mp3 in Resources */,
+				FF0777CE219F0741000C63CC /* 480Events.mp3 in Resources */,
 				FF6CEF1A20D7A887000661B1 /* ParsingTests_missingTimeProperty.json in Resources */,
+				FF0777CF219F0741000C63CC /* 60Events.mp3 in Resources */,
 				FF380F13217DF7270029A4D2 /* MD5_JSON.json in Resources */,
-				FF5D6F84218C6A5100A3B8FF /* 1_000Events2TrackingUrls.mp3 in Resources */,
-				FF1240872188937800EA1060 /* 50Events2TrackingUrls.mp3 in Resources */,
-				FF0E08342191960D003EA672 /* 80Events2TrackingUrls.mp3 in Resources */,
+				FF0777CD219F0741000C63CC /* 50Events.mp3 in Resources */,
+				FF0777D4219F0741000C63CC /* 240Events.mp3 in Resources */,
+				FF0777D3219F0741000C63CC /* 360Events.mp3 in Resources */,
 				FF6CEF2120D7A887000661B1 /* RAD_time_not_available.m4a in Resources */,
 				FF6CEF2620D7C2C9000661B1 /* RAD_events.m4a in Resources */,
+				FF0777D1219F0741000C63CC /* 100Events.mp3 in Resources */,
 				FF6CEF2320D7A887000661B1 /* no_RAD_medata.m4a in Resources */,
 				FF5D6F7C218C561700A3B8FF /* smallFile_10Events.json in Resources */,
 			);

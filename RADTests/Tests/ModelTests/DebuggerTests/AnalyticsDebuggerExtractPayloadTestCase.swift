@@ -22,7 +22,7 @@ import AVFoundation
 class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
     func testPayloadExtraction() {
         guard let url = Bundle.testBundle.url(
-            forResource: "50Events2TrackingUrls", withExtension: "mp3"
+            forResource: "50Events", withExtension: "mp3"
         ) else {
             XCTFail("Resource is not available.")
             return
@@ -44,7 +44,7 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
 
     func testRangeCreation() {
         guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls", withExtension: "mp3"
+            forResource: "1_000Events", withExtension: "mp3"
         ) else {
             XCTFail("Resource is not available.")
             return
@@ -70,7 +70,7 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
 
     func testListeningRemoval() {
         guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls", withExtension: "mp3"
+            forResource: "1_000Events", withExtension: "mp3"
         ) else {
             XCTFail("Resource is not available.")
             return

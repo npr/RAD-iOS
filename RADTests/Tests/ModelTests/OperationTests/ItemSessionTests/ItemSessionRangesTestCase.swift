@@ -23,7 +23,7 @@ import AVFoundation
 class ItemSessionRangesTestCase: AnalyticsTestCase, RADExtractionTestCase {
     func testCreationOfRanges() {
         guard let url = Bundle.testBundle.url(
-            forResource: "100Events2TrackingUrls", withExtension: "mp3"
+            forResource: "100Events", withExtension: "mp3"
         ) else {
                 XCTFail("Asset is not available.")
                 return

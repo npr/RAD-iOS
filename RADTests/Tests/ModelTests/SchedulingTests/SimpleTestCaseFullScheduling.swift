@@ -32,7 +32,7 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
 
     func testScheduling() {
         guard let url = Bundle.testBundle.url(
-            forResource: "50Events2TrackingUrls", withExtension: "mp3"
+            forResource: "50Events", withExtension: "mp3"
         ) else {
             XCTFail("Resource is not available.")
             return

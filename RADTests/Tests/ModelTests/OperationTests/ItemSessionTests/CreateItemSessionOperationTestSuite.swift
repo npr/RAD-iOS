@@ -25,7 +25,7 @@ RADExtractionTestCase {
 
     func testCaseFor_objectsAreCreatedInDatabase() {
         guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls", withExtension: "mp3"
+            forResource: "1_000Events", withExtension: "mp3"
         ) else {
             XCTFail("Asset is not available.")
             return
