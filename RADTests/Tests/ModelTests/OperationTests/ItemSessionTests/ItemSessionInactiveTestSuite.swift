@@ -21,15 +21,8 @@ import AVFoundation
 
 class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     func testCaseFor_itemSessionIsActiveDuringPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "RAD_events",
-            withExtension: "m4a"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(
+            name: "RAD_events", extension: "m4a")
         player.replaceCurrentItem(with: item)
 
         player.play()
@@ -62,15 +55,7 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     }
 
     func testCaseFor_itemSessionIsInactiveAfterPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events",
-            withExtension: "mp3"
-        ) else {
-                XCTFail("Resource not available.")
-                return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         player.replaceCurrentItem(with: item)
 
         player.play()

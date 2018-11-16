@@ -21,13 +21,7 @@ import AVFoundation
 
 class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
     func testPayloadExtraction() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "50Events", withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "50Events")
 
         let payloadExpectation = self.expectation(
             description: "Payload check.")
@@ -43,16 +37,9 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
     }
 
     func testRangeCreation() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events", withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         let expectation = RangeExpectation(
             description: "Time range was created.")
-
-        let item = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: item)
 
         DispatchQueue.main.asyncAfter(
@@ -69,18 +56,10 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
     }
 
     func testListeningRemoval() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events", withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         let expectation = RangeExpectation(
             description: "Time range was created.")
-
         expectation.assertForOverFulfill = true
-
-        let item = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: item)
 
         DispatchQueue.main.asyncAfter(

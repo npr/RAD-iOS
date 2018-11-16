@@ -21,15 +21,7 @@ import AVFoundation
 
 class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     func testCaseFor_radIsUnlocked_duringPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "180Events",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "180Events")
         player.replaceCurrentItem(with: item)
 
         player.play()
@@ -51,15 +43,7 @@ class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     }
 
     func testCaseFor_radIsUnlocked_afterPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "240Events",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "240Events")
         player.replaceCurrentItem(with: item)
 
         player.play()

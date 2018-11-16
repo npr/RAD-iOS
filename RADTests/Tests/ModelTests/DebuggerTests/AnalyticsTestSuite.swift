@@ -24,15 +24,7 @@ class AnalyticsTestSuite: AnalyticsTestCase {
         analytics.stopSendingData()
         analytics.startSendingData()
 
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         player.replaceCurrentItem(with: item)
 
         let expectation = self.expectation(

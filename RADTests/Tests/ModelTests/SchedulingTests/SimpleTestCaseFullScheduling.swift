@@ -31,20 +31,14 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
     }
 
     func testScheduling() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "50Events", withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
+        let item: AVPlayerItem! = findResource(name: "50Events")
 
-        OHHTTPStubs.stubRequests(passingTest: { request -> Bool in
-            return request.url?.absoluteString == "https://www.npr.org"
-        }, withStubResponse: { request -> OHHTTPStubsResponse in
-            return OHHTTPStubsResponse(
-                jsonObject: [:], statusCode: 200, headers: nil)
+        OHHTTPStubs.stubRequests(
+            passingTest: checkUrlClosure,
+            withStubResponse: { request -> OHHTTPStubsResponse in
+                return OHHTTPStubsResponse(
+                    jsonObject: [:], statusCode: 200, headers: nil)
         })
-        let item = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: item)
 
         player.play()

@@ -18,6 +18,7 @@
 import XCTest
 import AVFoundation
 import CoreData
+import OHHTTPStubs
 @testable import RAD
 
 class AnalyticsTestCase: OperationTestCase {
@@ -28,6 +29,17 @@ class AnalyticsTestCase: OperationTestCase {
     /// - always: The detabase is deleted after each test.
     enum DatabaseCleanupRule {
         case none, once, always
+    }
+
+    var reportingUrls: [String] {
+        return ["https://www.npr.org"]
+    }
+
+    var checkUrlClosure: OHHTTPStubsTestBlock {
+        return { request in
+            guard let url = request.url?.absoluteString else { return false }
+            return self.reportingUrls.firstIndex(of: url) != nil
+        }
     }
 
     lazy var player: AVPlayer = {
@@ -60,6 +72,23 @@ class AnalyticsTestCase: OperationTestCase {
         analytics = Analytics(configuration: configuration)
         analytics.observePlayer(player)
     }
+
+    func findResource(
+        name: String,
+        extension: String = "mp3",
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> AVPlayerItem! {
+        guard let url = Bundle.testBundle.url(
+            forResource: name, withExtension: `extension`
+        ) else {
+            XCTFail("Resource is not available", file: file, line: line)
+            return nil
+        }
+        return AVPlayerItem(url: url)
+    }
+
+    // MARK: Private functionality
 
     private func applyDatabaseDeleteRule() {
         switch databaseCleanupRule {

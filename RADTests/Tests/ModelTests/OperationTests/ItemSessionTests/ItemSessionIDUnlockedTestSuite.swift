@@ -22,15 +22,7 @@ import AVFoundation
 class ItemSessionIDUnlockedTestSuite: AnalyticsTestCase,
 RADExtractionTestCase {
     func testCaseFor_sessionIDIsUnlocked_duringPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "60Events",
-            withExtension: "mp3"
-            ) else {
-                XCTFail("Resource not available.")
-                return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "60Events")
         player.replaceCurrentItem(with: item)
 
         player.play()
@@ -52,15 +44,7 @@ RADExtractionTestCase {
     }
 
     func testCaseFor_sessionIDIsUnlocked_afterPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "80Events",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "80Events")
         player.replaceCurrentItem(with: item)
 
         player.play()

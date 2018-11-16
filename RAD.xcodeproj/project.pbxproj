@@ -39,6 +39,7 @@
 		FF0777D3219F0741000C63CC /* 360Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CA219F0741000C63CC /* 360Events.mp3 */; };
 		FF0777D4219F0741000C63CC /* 240Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CB219F0741000C63CC /* 240Events.mp3 */; };
 		FF0777D5219F0741000C63CC /* 80Events.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF0777CC219F0741000C63CC /* 80Events.mp3 */; };
+		FF0777D7219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */; };
 		FF0ACB3920EE099700B454E4 /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3820EE099700B454E4 /* Event+Convenience.swift */; };
 		FF0ACB3B20EE09A700B454E4 /* RadMetadata+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3A20EE09A700B454E4 /* RadMetadata+Convenience.swift */; };
 		FF0ACB3D20EE09BF00B454E4 /* Server+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0ACB3C20EE09BF00B454E4 /* Server+Convenience.swift */; };
@@ -300,6 +301,7 @@
 		FF0777CA219F0741000C63CC /* 360Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 360Events.mp3; sourceTree = "<group>"; };
 		FF0777CB219F0741000C63CC /* 240Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 240Events.mp3; sourceTree = "<group>"; };
 		FF0777CC219F0741000C63CC /* 80Events.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 80Events.mp3; sourceTree = "<group>"; };
+		FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTimeRangeTestCase.swift; sourceTree = "<group>"; };
 		FF0ACB3820EE099700B454E4 /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		FF0ACB3A20EE09A700B454E4 /* RadMetadata+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadMetadata+Convenience.swift"; sourceTree = "<group>"; };
 		FF0ACB3C20EE09BF00B454E4 /* Server+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server+Convenience.swift"; sourceTree = "<group>"; };
@@ -835,6 +837,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4A048821906369003A466B /* SimpleTestCaseFullScheduling.swift */,
+				FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */,
 			);
 			path = SchedulingTests;
 			sourceTree = "<group>";
@@ -1524,6 +1527,7 @@
 				FF48622220CAAACA00B996C6 /* TimeComponentsTests.swift in Sources */,
 				FF380EF9217DC80C0029A4D2 /* XCTest+MessageOption.swift in Sources */,
 				FF219446217F4F80003417FF /* ReverseBooleanOperation.swift in Sources */,
+				FF0777D7219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift in Sources */,
 				FF48622520CAB10700B996C6 /* Double+Equality.swift in Sources */,
 				FF7DC1FB20CEB56B0019DD84 /* ParsingTests.swift in Sources */,
 				FF380F01217DD7B20029A4D2 /* DictionaryRawRepresentableTestCase.swift in Sources */,

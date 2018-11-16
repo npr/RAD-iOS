@@ -24,13 +24,7 @@ class CreateItemSessionOperationTestSuite: AnalyticsTestCase,
 RADExtractionTestCase {
 
     func testCaseFor_objectsAreCreatedInDatabase() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events", withExtension: "mp3"
-        ) else {
-            XCTFail("Asset is not available.")
-            return
-        }
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         player.replaceCurrentItem(with: item)
         player.play()
 

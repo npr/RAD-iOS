@@ -22,13 +22,7 @@ import AVFoundation
 
 class ItemSessionRangesTestCase: AnalyticsTestCase, RADExtractionTestCase {
     func testCreationOfRanges() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "100Events", withExtension: "mp3"
-        ) else {
-                XCTFail("Asset is not available.")
-                return
-        }
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "100Events")
 
         guard let context = Storage.shared?.backgroundQueueContext else {
             XCTFail("Database is not available.")
