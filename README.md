@@ -14,7 +14,7 @@ Add RAD dependency in your Cartfile
 ```
 github "npr/RAD-iOS"
 ```
-and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the RAD and its dependency Reachability frameworks into your project.
+and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the `RAD` and, its dependency, `Reachability` frameworks into your project.
 
 ### [CocoaPods](https://cocoapods.org)
 
