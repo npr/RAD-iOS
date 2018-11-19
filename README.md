@@ -14,11 +14,22 @@ Add RAD dependency in your Cartfile
 ```
 github "npr/RAD-iOS"
 ```
-and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the .framework file into your project.
+and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the `RAD` and, its dependency, `Reachability` frameworks into your project.
 
 ### [CocoaPods](https://cocoapods.org)
 
-Support will be available soon.
+Add `RAD` pod in your Podfile and execute `pod update` using the command line in your project directory.
+
+Example:
+```
+target 'TargetName' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TargetName
+  pod "RAD"
+end
+```
 
 ### Project integration
 
