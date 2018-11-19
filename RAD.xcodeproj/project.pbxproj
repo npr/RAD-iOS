@@ -131,6 +131,7 @@
 		FF2EBFE62183030100BDDE4C /* ItemSessionID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2EBFDA2183030100BDDE4C /* ItemSessionID+CoreDataProperties.swift */; };
 		FF2EBFEA2183457B00BDDE4C /* WeakReferenceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2EBFE92183457B00BDDE4C /* WeakReferenceTestCase.swift */; };
 		FF2EBFEC2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2EBFEB2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift */; };
+		FF31AFAD21A2F32B00F7A252 /* BatchGenerationTestCase1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */; };
 		FF380EF4217DBBAD0029A4D2 /* DateComponentsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF3217DBBAD0029A4D2 /* DateComponentsTestCase.swift */; };
 		FF380EF7217DC7E70029A4D2 /* XCTest+OptionalEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */; };
 		FF380EF9217DC80C0029A4D2 /* XCTest+MessageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */; };
@@ -393,6 +394,7 @@
 		FF2EBFDA2183030100BDDE4C /* ItemSessionID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemSessionID+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FF2EBFE92183457B00BDDE4C /* WeakReferenceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceTestCase.swift; sourceTree = "<group>"; };
 		FF2EBFEB2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceContainerTestCase.swift; sourceTree = "<group>"; };
+		FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchGenerationTestCase1.swift; sourceTree = "<group>"; };
 		FF380EF3217DBBAD0029A4D2 /* DateComponentsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponentsTestCase.swift; sourceTree = "<group>"; };
 		FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+OptionalEqual.swift"; sourceTree = "<group>"; };
 		FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+MessageOption.swift"; sourceTree = "<group>"; };
@@ -838,6 +840,7 @@
 			children = (
 				FF4A048821906369003A466B /* SimpleTestCaseFullScheduling.swift */,
 				FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */,
+				FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */,
 			);
 			path = SchedulingTests;
 			sourceTree = "<group>";
@@ -1560,6 +1563,7 @@
 				FF380F0B217DE9B00029A4D2 /* UrlRequestTestCase.swift in Sources */,
 				FFA0C1B1219207D100D684AA /* MD5Checkable.swift in Sources */,
 				FFA0C1AF2191FEE000D684AA /* AnalyticsTestSuite.swift in Sources */,
+				FF31AFAD21A2F32B00F7A252 /* BatchGenerationTestCase1.swift in Sources */,
 				FF2193FE217F18C1003417FF /* OperationIsCancelled.swift in Sources */,
 				FF5D6F88218C80E000A3B8FF /* ItemSessionInactiveTestSuite.swift in Sources */,
 				FF2193F7217F08AB003417FF /* PlainOperation.swift in Sources */,

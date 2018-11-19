@@ -38,10 +38,8 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
         let item: AVPlayerItem! = findResource(name: "240Events")
         let pauseExpectation = self.expectation(
             description: "Player did pause.")
-
         player.replaceCurrentItem(with: item)
         player.play()
-
         DispatchQueue.background.asyncAfter(
             deadline: .now() + .seconds(3.2), execute: {
                 self.player.pause()
@@ -50,10 +48,11 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
 
         let requestExpectation = self.expectation(
             description: "Request did fail.")
+        requestExpectation.assertForOverFulfill = false
 
         OHHTTPStubs.stubRequests(
             passingTest: checkUrlClosure,
-            withStubResponse: { request -> OHHTTPStubsResponse in
+            withStubResponse: { _ -> OHHTTPStubsResponse in
                 requestExpectation.fulfill()
                 return OHHTTPStubsResponse(
                     jsonObject: [:], statusCode: 500, headers: nil)
@@ -63,11 +62,14 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
             for: [pauseExpectation, requestExpectation],
             timeout: .seconds(30))
 
+        checkEvents(for: item)
+    }
+
+    private func checkEvents(for item: AVPlayerItem) {
         guard let context = Storage.shared?.mainQueueContext else {
             XCTFail("Context is not available")
             return
         }
-
         guard let md5 = extractMD5(from: item) else {
             XCTFail("MD5 is not available.")
             return
@@ -83,6 +85,7 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
                 "Expected number of events were not created.")
             eventsExpectation.fulfill()
         })
+        fetchEvents.chainOperation(with: completion)
 
         concurrentQueue.addOperations(
             [fetchEvents, completion], waitUntilFinished: false)
