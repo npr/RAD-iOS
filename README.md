@@ -6,6 +6,8 @@
 
 Remote Audio Data is a framework for reporting the listenership of podcasts in iOS apps.
 
+If you want to view the RAD specification in more detail, please visit [this page](https://docs.google.com/document/d/14W1M3RaNfv-3mzY0paTs1A_uZ5fITSvWbpMbIikdHxk).
+
 ## How to integrate RAD framework
 
 ### [Carthage](https://github.com/Carthage/Carthage)
