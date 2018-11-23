@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF1DA16721A8353E0097AFB4 /* NetworkRequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DA16621A8353E0097AFB4 /* NetworkRequestTestCase.swift */; };
 		FF6CE84921942B1B002B2B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CE84821942B1B002B2B95 /* AppDelegate.swift */; };
 		FF6CE84B21942B1B002B2B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6CE84A21942B1B002B2B95 /* ViewController.swift */; };
 		FF6CE84E21942B1B002B2B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6CE84C21942B1B002B2B95 /* Main.storyboard */; };
@@ -17,6 +18,12 @@
 		FFC031D4219C342D006A29B6 /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFC031D1219C340E006A29B6 /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFC031DE219C343A006A29B6 /* RAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC031DB219C3432006A29B6 /* RAD.framework */; };
 		FFC031DF219C343A006A29B6 /* RAD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFC031DB219C3432006A29B6 /* RAD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FFF93BB021A557A900548287 /* RangeCreationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BAF21A557A900548287 /* RangeCreationTestCase.swift */; };
+		FFF93BB521A5580E00548287 /* SampleFile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF93BB421A5580E00548287 /* SampleFile.mp3 */; };
+		FFF93BB821A5586E00548287 /* Bundle+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BB721A5586E00548287 /* Bundle+Test.swift */; };
+		FFF93BBA21A558E900548287 /* RAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC031DB219C3432006A29B6 /* RAD.framework */; };
+		FFF93BBC21A55D2B00548287 /* DispatchQueue+Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BBB21A55D2B00548287 /* DispatchQueue+Queues.swift */; };
+		FFF93BC321A58FDA00548287 /* AnalyticsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BC221A58FDA00548287 /* AnalyticsTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,13 @@
 			remoteGlobalIDString = FFFA0CA220AF0BEA007D1F9C;
 			remoteInfo = RAD;
 		};
+		FFF93BA921A5578000548287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF6CE83D21942B1B002B2B95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF6CE84421942B1B002B2B95;
+			remoteInfo = "RAD-iOSDemo";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF1DA16621A8353E0097AFB4 /* NetworkRequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTestCase.swift; sourceTree = "<group>"; };
 		FF6CE84521942B1B002B2B95 /* RAD-iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAD-iOSDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6CE84821942B1B002B2B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6CE84A21942B1B002B2B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +84,13 @@
 		FFC031BE219C1AFC006A29B6 /* SampleFile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SampleFile.mp3; sourceTree = "<group>"; };
 		FFC031D1219C340E006A29B6 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = ../../Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		FFC031D5219C3432006A29B6 /* RAD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RAD.xcodeproj; path = ../RAD.xcodeproj; sourceTree = "<group>"; };
+		FFF93BA421A5578000548287 /* RAD-iOSDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RAD-iOSDemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF93BA821A5578000548287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF93BAF21A557A900548287 /* RangeCreationTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCreationTestCase.swift; sourceTree = "<group>"; };
+		FFF93BB421A5580E00548287 /* SampleFile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SampleFile.mp3; path = "RAD-iOSDemo/SampleFile.mp3"; sourceTree = SOURCE_ROOT; };
+		FFF93BB721A5586E00548287 /* Bundle+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Test.swift"; sourceTree = "<group>"; };
+		FFF93BBB21A55D2B00548287 /* DispatchQueue+Queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Queues.swift"; sourceTree = "<group>"; };
+		FFF93BC221A58FDA00548287 /* AnalyticsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +103,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFF93BA121A5578000548287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF93BBA21A558E900548287 /* RAD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +119,9 @@
 			children = (
 				FFC031D5219C3432006A29B6 /* RAD.xcodeproj */,
 				FF6CE84721942B1B002B2B95 /* RAD-iOSDemo */,
+				FFF93BA521A5578000548287 /* RAD-iOSDemoTests */,
 				FF6CE84621942B1B002B2B95 /* Products */,
+				FFF93BB921A558E900548287 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6CE84521942B1B002B2B95 /* RAD-iOSDemo.app */,
+				FFF93BA421A5578000548287 /* RAD-iOSDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +174,51 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FFF93BA521A5578000548287 /* RAD-iOSDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFF93BB621A5581700548287 /* Extensions */,
+				FFF93BB121A557EC00548287 /* TestCases */,
+				FFF93BB321A557FE00548287 /* Resources */,
+				FFF93BA821A5578000548287 /* Info.plist */,
+			);
+			path = "RAD-iOSDemoTests";
+			sourceTree = "<group>";
+		};
+		FFF93BB121A557EC00548287 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				FFF93BC221A58FDA00548287 /* AnalyticsTestCase.swift */,
+				FF1DA16621A8353E0097AFB4 /* NetworkRequestTestCase.swift */,
+				FFF93BAF21A557A900548287 /* RangeCreationTestCase.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		FFF93BB321A557FE00548287 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFF93BB421A5580E00548287 /* SampleFile.mp3 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FFF93BB621A5581700548287 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFF93BB721A5586E00548287 /* Bundle+Test.swift */,
+				FFF93BBB21A55D2B00548287 /* DispatchQueue+Queues.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFF93BB921A558E900548287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +241,24 @@
 			productReference = FF6CE84521942B1B002B2B95 /* RAD-iOSDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FFF93BA321A5578000548287 /* RAD-iOSDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFF93BAE21A5578000548287 /* Build configuration list for PBXNativeTarget "RAD-iOSDemoTests" */;
+			buildPhases = (
+				FFF93BA021A5578000548287 /* Sources */,
+				FFF93BA121A5578000548287 /* Frameworks */,
+				FFF93BA221A5578000548287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFF93BAA21A5578000548287 /* PBXTargetDependency */,
+			);
+			name = "RAD-iOSDemoTests";
+			productName = "RAD-iOSDemoTests";
+			productReference = FFF93BA421A5578000548287 /* RAD-iOSDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,6 +276,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					FFF93BA321A5578000548287 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FF6CE84421942B1B002B2B95;
 					};
 				};
 			};
@@ -203,6 +303,7 @@
 			projectRoot = "";
 			targets = (
 				FF6CE84421942B1B002B2B95 /* RAD-iOSDemo */,
+				FFF93BA321A5578000548287 /* RAD-iOSDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +337,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFF93BA221A5578000548287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF93BB521A5580E00548287 /* SampleFile.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -248,6 +357,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFF93BA021A5578000548287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF93BB021A557A900548287 /* RangeCreationTestCase.swift in Sources */,
+				FFF93BBC21A55D2B00548287 /* DispatchQueue+Queues.swift in Sources */,
+				FF1DA16721A8353E0097AFB4 /* NetworkRequestTestCase.swift in Sources */,
+				FFF93BB821A5586E00548287 /* Bundle+Test.swift in Sources */,
+				FFF93BC321A58FDA00548287 /* AnalyticsTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -255,6 +376,11 @@
 			isa = PBXTargetDependency;
 			name = RAD;
 			targetProxy = FFC031E0219C343A006A29B6 /* PBXContainerItemProxy */;
+		};
+		FFF93BAA21A5578000548287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF6CE84421942B1B002B2B95 /* RAD-iOSDemo */;
+			targetProxy = FFF93BA921A5578000548287 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -442,6 +568,50 @@
 			};
 			name = Release;
 		};
+		FFF93BAB21A5578000548287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "RAD-iOSDemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NPR.RAD-iOSDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAD-iOSDemo.app/RAD-iOSDemo";
+			};
+			name = Debug;
+		};
+		FFF93BAC21A5578000548287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "RAD-iOSDemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NPR.RAD-iOSDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAD-iOSDemo.app/RAD-iOSDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,6 +629,15 @@
 			buildConfigurations = (
 				FF6CE85821942B1D002B2B95 /* Debug */,
 				FF6CE85921942B1D002B2B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFF93BAE21A5578000548287 /* Build configuration list for PBXNativeTarget "RAD-iOSDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFF93BAB21A5578000548287 /* Debug */,
+				FFF93BAC21A5578000548287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
