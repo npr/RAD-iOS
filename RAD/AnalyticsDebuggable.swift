@@ -34,10 +34,21 @@ public protocol AnalyticsDebuggable {
     ///
     /// - Parameter observer: The observer.
     func addListeningObserver(_ observer: ListeningObserver)
-    /// Removes an observer. It is not required to call the remove.
+    /// Stop observing listening events.
+    /// It is not required to call this function.
     ///
     /// - Parameter observer: The registered observer.
     func removeListeningObserver(_ observer: ListeningObserver)
+
+    /// Add an observer to receive callbacks when requests are performed.
+    ///
+    /// - Parameter observer: The observer.
+    func addNetworkObserver(_ observer: NetworkObserver)
+    /// Stop observing network requests.
+    /// It is not required to call this function.
+    ///
+    /// - Parameter observer: The observer.
+    func removeNetworkObserver(_ observer: NetworkObserver)
 
     /// Extract RAD payload from an AVAsset. The RAD payload is formatted
     /// to be ready for displaying.

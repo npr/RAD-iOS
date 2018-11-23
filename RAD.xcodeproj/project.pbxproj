@@ -73,6 +73,7 @@
 		FF16FA2F20F37F3700ED572E /* OperationQueue+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF16FA2E20F37F3700ED572E /* OperationQueue+Background.swift */; };
 		FF16FA3120F3897400ED572E /* URLSessionConfiguration+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF16FA3020F3897400ED572E /* URLSessionConfiguration+Configurations.swift */; };
 		FF1A69EC219AE1D500D735F6 /* SentTimezonedDatePredicateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A69EB219AE1D500D735F6 /* SentTimezonedDatePredicateOperation.swift */; };
+		FF1DA16421A7F0EA0097AFB4 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DA16321A7F0EA0097AFB4 /* NetworkObserver.swift */; };
 		FF2193ED217F0314003417FF /* OperationIsReadyTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2193EC217F0314003417FF /* OperationIsReadyTestCase.swift */; };
 		FF2193EF217F0528003417FF /* OperationIsExecutingTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2193EE217F0528003417FF /* OperationIsExecutingTestCase.swift */; };
 		FF2193F1217F07E7003417FF /* OperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2193F0217F07E7003417FF /* OperationTestCase.swift */; };
@@ -332,6 +333,7 @@
 		FF16FA2E20F37F3700ED572E /* OperationQueue+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Background.swift"; sourceTree = "<group>"; };
 		FF16FA3020F3897400ED572E /* URLSessionConfiguration+Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+Configurations.swift"; sourceTree = "<group>"; };
 		FF1A69EB219AE1D500D735F6 /* SentTimezonedDatePredicateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTimezonedDatePredicateOperation.swift; sourceTree = "<group>"; };
+		FF1DA16321A7F0EA0097AFB4 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		FF2193EC217F0314003417FF /* OperationIsReadyTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationIsReadyTestCase.swift; sourceTree = "<group>"; };
 		FF2193EE217F0528003417FF /* OperationIsExecutingTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationIsExecutingTestCase.swift; sourceTree = "<group>"; };
 		FF2193F0217F07E7003417FF /* OperationTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTestCase.swift; sourceTree = "<group>"; };
@@ -994,6 +996,7 @@
 				FFF2860620C95B3300BCFF0A /* CMTimeScale.swift */,
 				FF10A8632181D54E008DEE36 /* DatabaseFetcher.swift */,
 				FF154FB02180B60D00E60011 /* ListeningObserver.swift */,
+				FF1DA16321A7F0EA0097AFB4 /* NetworkObserver.swift */,
 				FF154FAE2180B5FF00E60011 /* Object.swift */,
 				FF0ECF432179C8AC009C5528 /* Roundable.swift */,
 			);
@@ -1447,6 +1450,7 @@
 				FF00128B21380772008740D0 /* TimeRangeBoundBuilder.swift in Sources */,
 				FF0262A421258F91007DF038 /* OutputOperation.swift in Sources */,
 				FF4A3FB8212AB58400970A97 /* RADPayload.swift in Sources */,
+				FF1DA16421A7F0EA0097AFB4 /* NetworkObserver.swift in Sources */,
 				FFA9D51D2126FE2C004EBDD0 /* FetchOperation.swift in Sources */,
 				FFA9D5232126FF90004EBDD0 /* CreateEmptyObjectPredicateOperation.swift in Sources */,
 				FFE8B56A20E6599C0038A53B /* NetworkScheduler.swift in Sources */,
