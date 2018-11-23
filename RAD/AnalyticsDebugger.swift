@@ -49,11 +49,25 @@ final class AnalyticsDebugger: AnalyticsDebuggable, PlayerObservationDelegate {
         observersContainer.append(observer)
     }
 
-    /// Unregister from listening events.
+    /// Unregister from observing listening events.
     ///
-    /// - Parameter observer: The observer which should be removed.
+    /// - Parameter observer: The observer be remove.
     func removeListeningObserver(_ observer: ListeningObserver) {
         observersContainer.remove(observer)
+    }
+
+    /// Register to observe network calls.
+    ///
+    /// - Parameter observer: The observer to register.
+    func addNetworkObserver(_ observer: NetworkObserver) {
+        NetworkService.shared.addNetworkObserver(observer)
+    }
+
+    /// Unregister from observing network calls.
+    ///
+    /// - Parameter observer: The observer to remove.
+    func removeNetworkObserver(_ observer: NetworkObserver) {
+        NetworkService.shared.removeNetworkObserver(observer)
     }
 
     func extractRADPayload(
