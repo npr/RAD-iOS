@@ -92,6 +92,22 @@ analytics.stopSendingData() // the next data send schedule is cancelled and data
 analytics.startSendingData() // schedule a point in time when to send data to servers based on configuration
 ```
 
+#### Testing integration
+
+Analytics provides a debug interface (`AnalyticsDebuggable`) which can be used to check if listening ranges are created or if network requests are performed.
+
+To register for listening ranges, your class should implement `ListeningObserver` and register using to debugger:
+```swift
+analytics.debugger.addListeningObserver(yourObject)
+```
+
+To register for network requests, your class should implement `NetworkObserver` and register using to debugger:
+```swift
+analytics.debugger.addNetworkObserver(yourObject)
+```
+
+Demo application used this API and created 2 reusable unit tests and check is integration of RAD framework is successful.
+
 ## Demo
 
 A demo project is available. Before first run, it is required to checkout its dependencies using Carthage
