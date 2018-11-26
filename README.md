@@ -106,7 +106,7 @@ To register for network requests, your class should implement `NetworkObserver` 
 analytics.debugger.addNetworkObserver(yourObject)
 ```
 
-Demo application used this API and created 2 reusable unit tests and check is integration of RAD framework is successful.
+Demo application used this API and created 2 reusable unit tests that checks if integration of RAD framework is successful.
 
 ## Demo
 
