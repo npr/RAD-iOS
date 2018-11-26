@@ -12,7 +12,11 @@ import RAD
 
 class ViewController: UIViewController {
     var analytics: Analytics?
+
+    @IBOutlet private weak var playButton: UIButton!
+
     private let player = AVPlayer(playerItem: nil)
+    private var didPlayToEndObservation: Any?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +25,14 @@ class ViewController: UIViewController {
         analytics?.observePlayer(player)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    // MARK: Actions
 
+    @IBAction private func playButtonDidTouch(_ sender: Any) {
         play()
+        playButton.isEnabled = false
     }
+
+    // MARK: Private functionality
 
     private func play() {
         guard let url = Bundle.main.url(
@@ -36,5 +43,11 @@ class ViewController: UIViewController {
         let item = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: item)
         player.play()
+
+        didPlayToEndObservation = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime,
+            object: item, queue: .main, using: { _ in
+                self.playButton.isEnabled = true
+        })
     }
 }

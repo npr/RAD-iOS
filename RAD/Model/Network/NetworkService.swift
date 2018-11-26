@@ -26,6 +26,7 @@ class NetworkService: NSObject, URLSessionTaskDelegate {
 
     private var session: URLSession!
     private var tasksMap: [URLSessionTask: Completion] = [:]
+    private var observersContainer = WeakReferenceContainer<NetworkObserver>()
 
     private override init() {
         super.init()
@@ -35,12 +36,23 @@ class NetworkService: NSObject, URLSessionTaskDelegate {
             delegateQueue: OperationQueue.background)
     }
 
+    func addNetworkObserver(_ observer: NetworkObserver) {
+        observersContainer.append(observer)
+    }
+
+    func removeNetworkObserver(_ observer: NetworkObserver) {
+        observersContainer.remove(observer)
+    }
+
     func executeRequest(_ request: URLRequest, completion: Completion? = nil) {
         let task = session.dataTask(with: request)
         if let completion = completion {
             tasksMap[task] = completion
         }
         task.resume()
+        observersContainer.forEach({
+            $0?.didBeginExecutionOfUrlRequest(request)
+        })
     }
 
     // MARK: URLSessionDelegate

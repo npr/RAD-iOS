@@ -33,11 +33,11 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
     func testScheduling() {
         let item: AVPlayerItem! = findResource(name: "50Events")
 
-        OHHTTPStubs.stubRequests(
-            passingTest: checkUrlClosure,
-            withStubResponse: { request -> OHHTTPStubsResponse in
-                return OHHTTPStubsResponse(
-                    jsonObject: [:], statusCode: 200, headers: nil)
+        OHHTTPStubs.stubRequests(passingTest: { request -> Bool in
+            return request.url?.absoluteString == "https://www.npr.org"
+        }, withStubResponse: { _ -> OHHTTPStubsResponse in
+            return OHHTTPStubsResponse(
+                jsonObject: [:], statusCode: 200, headers: nil)
         })
         player.replaceCurrentItem(with: item)
 

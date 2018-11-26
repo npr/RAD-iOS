@@ -6,6 +6,8 @@
 
 Remote Audio Data is a framework for reporting the listenership of podcasts in iOS apps.
 
+If you want to view the RAD specification in more detail, please visit [this page](https://docs.google.com/document/d/14W1M3RaNfv-3mzY0paTs1A_uZ5fITSvWbpMbIikdHxk).
+
 ## How to integrate RAD framework
 
 ### [Carthage](https://github.com/Carthage/Carthage)
@@ -14,11 +16,22 @@ Add RAD dependency in your Cartfile
 ```
 github "npr/RAD-iOS"
 ```
-and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the .framework file into your project.
+and follow the [general flow](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add the `RAD` and, its dependency, `Reachability` frameworks into your project.
 
 ### [CocoaPods](https://cocoapods.org)
 
-Support will be available soon.
+Add `RAD` pod in your Podfile and execute `pod update` using the command line in your project directory.
+
+Example:
+```
+target 'TargetName' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TargetName
+  pod "RAD"
+end
+```
 
 ### Project integration
 
@@ -78,6 +91,22 @@ You can start and stop the data send using the following methods:
 analytics.stopSendingData() // the next data send schedule is cancelled and data is not send to servers anymore
 analytics.startSendingData() // schedule a point in time when to send data to servers based on configuration
 ```
+
+#### Testing integration
+
+Analytics provides a debug interface (`AnalyticsDebuggable`) which can be used to check if listening ranges are created or if network requests are performed.
+
+To register for listening ranges, your class should implement `ListeningObserver` and register using to debugger:
+```swift
+analytics.debugger.addListeningObserver(yourObject)
+```
+
+To register for network requests, your class should implement `NetworkObserver` and register using to debugger:
+```swift
+analytics.debugger.addNetworkObserver(yourObject)
+```
+
+Demo application used this API and created 2 reusable unit tests that checks if integration of RAD framework is successful.
 
 ## Demo
 

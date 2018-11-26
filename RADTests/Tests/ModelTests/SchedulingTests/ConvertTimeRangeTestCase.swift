@@ -21,10 +21,6 @@ import OHHTTPStubs
 @testable import RAD
 
 class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
-    override var databaseCleanupRule: DatabaseCleanupRule {
-        return .once
-    }
-
     override var configuration: Configuration {
         return Configuration(
             submissionTimeInterval: .seconds(10),
