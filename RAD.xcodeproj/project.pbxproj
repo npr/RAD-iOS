@@ -132,6 +132,11 @@
 		FF2EBFEA2183457B00BDDE4C /* WeakReferenceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2EBFE92183457B00BDDE4C /* WeakReferenceTestCase.swift */; };
 		FF2EBFEC2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2EBFEB2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift */; };
 		FF31AFAD21A2F32B00F7A252 /* BatchGenerationTestCase1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */; };
+		FF31AFAF21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFAE21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift */; };
+		FF31AFB121A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFB021A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift */; };
+		FF31AFB321A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFB221A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift */; };
+		FF31AFB521A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFB421A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift */; };
+		FF31AFB721A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31AFB621A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift */; };
 		FF380EF4217DBBAD0029A4D2 /* DateComponentsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF3217DBBAD0029A4D2 /* DateComponentsTestCase.swift */; };
 		FF380EF7217DC7E70029A4D2 /* XCTest+OptionalEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */; };
 		FF380EF9217DC80C0029A4D2 /* XCTest+MessageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */; };
@@ -395,6 +400,11 @@
 		FF2EBFE92183457B00BDDE4C /* WeakReferenceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceTestCase.swift; sourceTree = "<group>"; };
 		FF2EBFEB2183464F00BDDE4C /* WeakReferenceContainerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakReferenceContainerTestCase.swift; sourceTree = "<group>"; };
 		FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchGenerationTestCase1.swift; sourceTree = "<group>"; };
+		FF31AFAE21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCodeClassCleanupTestCase.swift; sourceTree = "<group>"; };
+		FF31AFB021A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCodeClassCleanupTestCase.swift; sourceTree = "<group>"; };
+		FF31AFB221A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCodeClassCleanupTestCase.swift; sourceTree = "<group>"; };
+		FF31AFB421A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationalCodeClassCleanupTestCase.swift; sourceTree = "<group>"; };
+		FF31AFB621A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectionCodeClassCleanupTestCase.swift; sourceTree = "<group>"; };
 		FF380EF3217DBBAD0029A4D2 /* DateComponentsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponentsTestCase.swift; sourceTree = "<group>"; };
 		FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+OptionalEqual.swift"; sourceTree = "<group>"; };
 		FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+MessageOption.swift"; sourceTree = "<group>"; };
@@ -841,6 +851,11 @@
 				FF4A048821906369003A466B /* SimpleTestCaseFullScheduling.swift */,
 				FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */,
 				FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */,
+				FF31AFAE21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift */,
+				FF31AFB021A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift */,
+				FF31AFB221A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift */,
+				FF31AFB421A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift */,
+				FF31AFB621A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift */,
 			);
 			path = SchedulingTests;
 			sourceTree = "<group>";
@@ -1513,6 +1528,7 @@
 				FF84B9122187595800D48755 /* SaveOperationTestCase.swift in Sources */,
 				FF380EF7217DC7E70029A4D2 /* XCTest+OptionalEqual.swift in Sources */,
 				FF219451217F626F003417FF /* ParseJSONOperationTestSuite.swift in Sources */,
+				FF31AFB121A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift in Sources */,
 				FF5D6F7E218C57EB00A3B8FF /* RangeCreationExpectationBuilder.swift in Sources */,
 				FF380EFB217DC8550029A4D2 /* Inversable.swift in Sources */,
 				FF154FAB2180A5E300E60011 /* DispatchQueue+Queues.swift in Sources */,
@@ -1541,6 +1557,7 @@
 				FF380F0D217DEB870029A4D2 /* RangeReplaceableCollectionTestSuite.swift in Sources */,
 				FF2193EF217F0528003417FF /* OperationIsExecutingTestCase.swift in Sources */,
 				FF380F0F217DEE0B0029A4D2 /* FoundationOperationDependencyTestCase.swift in Sources */,
+				FF31AFB321A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift in Sources */,
 				FF2240CE218B269300F749EE /* ItemSessionRangesTestCase.swift in Sources */,
 				FF12408221885FB900EA1060 /* TimeRangeControllerTestSuite.swift in Sources */,
 				FF71BD8220D260C600125217 /* AnalyticsTestCase.swift in Sources */,
@@ -1557,6 +1574,7 @@
 				FF21944C217F59CD003417FF /* NextScheduleOperationTestCase.swift in Sources */,
 				FF380F09217DE2510029A4D2 /* SwiftMathFunctionTestSuite.swift in Sources */,
 				FF2193F9217F1694003417FF /* KVOExpectation.swift in Sources */,
+				FF31AFB521A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift in Sources */,
 				FF4A048F2190908E003A466B /* RadIDUnlockedTestSuite.swift in Sources */,
 				FF12408021884F3700EA1060 /* ContextTrasnferFetchTestSuite.swift in Sources */,
 				FF380F05217DDCF50029A4D2 /* DoubleExpectationTestSuite.swift in Sources */,
@@ -1571,6 +1589,8 @@
 				FF2240D0218B278100F749EE /* RADExtractionTestCase.swift in Sources */,
 				FF154FAD2180A5F300E60011 /* OperationQueue+Queues.swift in Sources */,
 				FF14B2C020E275BD008B5083 /* StorageTests.swift in Sources */,
+				FF31AFB721A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift in Sources */,
+				FF31AFAF21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift in Sources */,
 				FF380F03217DD93E0029A4D2 /* DispatchQueueTestCase.swift in Sources */,
 				FF2193F1217F07E7003417FF /* OperationTestCase.swift in Sources */,
 			);

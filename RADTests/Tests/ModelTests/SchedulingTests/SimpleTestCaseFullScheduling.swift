@@ -61,5 +61,7 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
         wait(
             for: [pauseExpectation, waitExpectation],
             timeout: TimeInterval.minutes(1))
+
+        // check that database is empty at the end of scheduling
     }
 }
