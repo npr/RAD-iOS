@@ -32,6 +32,7 @@ RangeCreationExpectationBuilder {
             deadline: .now() + .seconds(10),
             execute: {
                 self.player.pause()
+                self.player.replaceCurrentItem(with: nil)
                 expectation.fulfill()
         })
 

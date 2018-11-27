@@ -23,7 +23,7 @@ import OHHTTPStubs
 class SimpleTestCaseFullScheduling: AnalyticsTestCase {
     override var configuration: Configuration {
         return Configuration(
-            submissionTimeInterval: TimeInterval.seconds(30),
+            submissionTimeInterval: TimeInterval.seconds(15),
             batchSize: 10,
             expirationTimeInterval: DateComponents(day: 14),
             sessionExpirationTimeInterval: TimeInterval.hours(24),
@@ -39,28 +39,15 @@ class SimpleTestCaseFullScheduling: AnalyticsTestCase {
             return OHHTTPStubsResponse(
                 jsonObject: [:], statusCode: 200, headers: nil)
         })
-        player.replaceCurrentItem(with: item)
 
-        player.play()
-
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(15), execute: {
-                self.player.pause()
-                pauseExpectation.fulfill()
-        })
-
+        play(item: item, for: .seconds(4))
         let waitExpectation = self.expectation(description: "Waiting.")
 
-        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(40)) {
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(20)) {
             waitExpectation.fulfill()
         }
 
-        wait(
-            for: [pauseExpectation, waitExpectation],
-            timeout: TimeInterval.minutes(1))
+        wait(for: [waitExpectation], timeout: .seconds(30))
 
         let fetchExpectation = self.expectation(
             description: "Fetch expectation.")

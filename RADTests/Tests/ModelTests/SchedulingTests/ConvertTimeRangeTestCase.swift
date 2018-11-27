@@ -31,16 +31,7 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
     }
 
     func testEventsGeneration() {
-        let item: AVPlayerItem! = findResource(name: "240Events")
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-        player.replaceCurrentItem(with: item)
-        player.play()
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(3.2), execute: {
-                self.player.pause()
-                pauseExpectation.fulfill()
-        })
+        let item: AVPlayerItem! = findResource(name: "480Events")
 
         let requestExpectation = self.expectation(
             description: "Request did fail.")
@@ -54,9 +45,9 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
                     jsonObject: [:], statusCode: 500, headers: nil)
         })
 
-        wait(
-            for: [pauseExpectation, requestExpectation],
-            timeout: .seconds(30))
+        play(item: item, for: .seconds(3.2))
+
+        wait(for: [requestExpectation], timeout: .seconds(30))
 
         checkEvents(for: item)
     }
@@ -77,7 +68,7 @@ class ConvertTimeRangeTestCase: AnalyticsTestCase, RADExtractionTestCase {
             format: "md5 == '\(md5)'", argumentArray: nil)
         let completion = ClosureInputOperation<[Event]>(closure: { events in
             XCTAssert(
-                events.count == 7,
+                events.count == 13,
                 "Expected number of events were not created.")
             eventsExpectation.fulfill()
         })

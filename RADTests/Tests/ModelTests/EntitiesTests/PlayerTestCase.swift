@@ -50,6 +50,7 @@ class PlayerTestCase: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         item = nil
     }
 }

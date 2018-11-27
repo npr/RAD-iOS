@@ -41,40 +41,29 @@ RADExtractionTestCase {
         })
 
         wait(for: [fetchExpectation], timeout: TimeInterval.seconds(5))
+
+        player.pause()
+        player.replaceCurrentItem(with: nil)
     }
 
     func testCaseFor_sessionIDIsUnlocked_afterPlayback() {
         let item: AVPlayerItem! = findResource(name: "80Events")
-        player.replaceCurrentItem(with: item)
 
-        player.play()
-
-        let itemReplacedExpectation = self.expectation(
-            description: "Player did replace item.")
+        play(item: item, for: .seconds(2))
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
-
         DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2), execute: {
-                self.player.pause()
-                self.player.replaceCurrentItem(with: nil)
-                itemReplacedExpectation.fulfill()
-
-                DispatchQueue.concurrent.asyncAfter(
-                    deadline: .now() + .seconds(2), execute: {
-                        guard let md5 = self.extractMD5(from: item) else {
-                            XCTFail("Unable to create MD5 from RAD payload.")
-                            return
-                        }
-                        self.expectUnlockedItemSessionID(
-                            andFulfill: fetchExpectation, for: md5)
-                })
+                guard let md5 = self.extractMD5(from: item) else {
+                    XCTFail("Unable to create MD5 from RAD payload.")
+                    return
+                }
+                self.expectUnlockedItemSessionID(
+                    andFulfill: fetchExpectation, for: md5)
         })
 
-        wait(
-            for: [itemReplacedExpectation, fetchExpectation],
-            timeout: TimeInterval.seconds(10))
+        wait(for: [fetchExpectation], timeout: .seconds(10))
     }
 
     func testCaseFor_unavailableResource() {

@@ -73,6 +73,12 @@ class AnalyticsTestCase: OperationTestCase {
         analytics.observePlayer(player)
     }
 
+    override func tearDown() {
+        super.tearDown()
+
+        wait(for: .seconds(5))
+    }
+
     func findResource(
         name: String,
         extension: String = "mp3",
@@ -86,6 +92,31 @@ class AnalyticsTestCase: OperationTestCase {
             return nil
         }
         return AVPlayerItem(url: url)
+    }
+
+    func play(
+        item: AVPlayerItem?,
+        for time: TimeInterval,
+        shouldWait: Bool = true
+    ) {
+        player.replaceCurrentItem(with: item)
+        player.play()
+
+        var expectation: XCTestExpectation?
+        if shouldWait {
+            expectation = self.expectation(description: "Play expectation.")
+        }
+
+        DispatchQueue.concurrent.asyncAfter(
+            deadline: .now() + .seconds(time), execute: {
+                self.player.pause()
+                self.player.replaceCurrentItem(with: nil)
+                expectation?.fulfill()
+        })
+
+        if shouldWait, let expectation = expectation {
+            wait(for: [expectation], timeout: .seconds(time * 2))
+        }
     }
 
     // MARK: Private functionality

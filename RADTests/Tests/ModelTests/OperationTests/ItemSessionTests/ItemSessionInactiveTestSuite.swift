@@ -23,18 +23,8 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     func testCaseFor_itemSessionIsActiveDuringPlayback() {
         let item: AVPlayerItem! = findResource(
             name: "RAD_events", extension: "m4a")
-        player.replaceCurrentItem(with: item)
 
-        player.play()
-
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(5), execute: {
-                self.player.pause()
-                pauseExpectation.fulfill()
-        })
+        play(item: item, for: .seconds(5), shouldWait: false)
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
@@ -49,41 +39,25 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
                     andFulfill: fetchExpectation, for: md5)
         })
 
-        wait(
-            for: [pauseExpectation, fetchExpectation],
-            timeout: TimeInterval.minutes(1))
+        wait(for: [fetchExpectation], timeout: .minutes(1))
     }
 
     func testCaseFor_itemSessionIsInactiveAfterPlayback() {
         let item: AVPlayerItem! = findResource(name: "1_000Events")
-        player.replaceCurrentItem(with: item)
 
-        player.play()
-
-        let itemReplacedExpectation = self.expectation(
-            description: "Player did replace item.")
+        play(item: item, for: .seconds(15))
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
+            guard let md5 = self.extractMD5(from: item) else {
+                XCTFail("Unable to create MD5 from RAD payload.")
+                return
+            }
+            self.expectInactiveSessions(fulfilling: fetchExpectation, for: md5)
+        }
 
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(15), execute: {
-                self.player.pause()
-                self.player.replaceCurrentItem(with: nil)
-                itemReplacedExpectation.fulfill()
-
-                DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
-                    guard let md5 = self.extractMD5(from: item) else {
-                        XCTFail("Unable to create MD5 from RAD payload.")
-                        return
-                    }
-                    self.expectInactiveSessions(fulfilling: fetchExpectation, for: md5)
-                }
-        })
-
-        wait(
-            for: [itemReplacedExpectation, fetchExpectation],
-            timeout: TimeInterval.minutes(1))
+        wait(for: [fetchExpectation], timeout: .minutes(1))
     }
 
     // MARK: Private functionality

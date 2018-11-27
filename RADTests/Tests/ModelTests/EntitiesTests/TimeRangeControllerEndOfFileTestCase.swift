@@ -44,5 +44,7 @@ RangeCreationExpectationBuilder {
             for: [playToEndExpectation, rangeCreationExpectation],
             timeout: timeout
         )
+
+        player.replaceCurrentItem(with: nil)
     }
 }

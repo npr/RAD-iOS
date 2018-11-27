@@ -25,18 +25,8 @@ RADExtractionTestCase {
 
     func testCaseFor_objectsAreCreatedInDatabase() {
         let item: AVPlayerItem! = findResource(name: "1_000Events")
-        player.replaceCurrentItem(with: item)
-        player.play()
 
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-
-        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.player.pause()
-            pauseExpectation.fulfill()
-        }
-
-        wait(for: [pauseExpectation], timeout: TimeInterval.seconds(5))
+        play(item: item, for: .seconds(2))
 
         guard let context = Storage.shared?.backgroundQueueContext else {
             XCTFail("Database is not available.")

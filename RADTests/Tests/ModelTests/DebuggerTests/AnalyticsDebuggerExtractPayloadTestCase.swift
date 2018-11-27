@@ -40,16 +40,11 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
         let item: AVPlayerItem! = findResource(name: "1_000Events")
         let expectation = RangeExpectation(
             description: "Time range was created.")
-        player.replaceCurrentItem(with: item)
 
         DispatchQueue.main.asyncAfter(
             deadline: .now() + .seconds(1), execute: {
                 self.analytics.debugger.addListeningObserver(expectation)
-                self.player.play()
-        })
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(20), execute: {
-                self.player.pause()
+                self.play(item: item, for: .seconds(20))
         })
 
         wait(for: [expectation], timeout: TimeInterval.minutes(1))

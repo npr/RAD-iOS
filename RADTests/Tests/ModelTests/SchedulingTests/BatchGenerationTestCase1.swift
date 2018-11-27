@@ -36,15 +36,6 @@ class BatchGenerationTestCase1: AnalyticsTestCase, RADExtractionTestCase {
 
     func testEventsBatching() {
         let item: AVPlayerItem! = findResource(name: "360Events")
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-        player.replaceCurrentItem(with: item)
-        player.play()
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(3.2), execute: {
-                self.player.pause()
-                pauseExpectation.fulfill()
-        })
 
         let requestExpectation = self.expectation(
             description: "Request did fail.")
@@ -59,9 +50,9 @@ class BatchGenerationTestCase1: AnalyticsTestCase, RADExtractionTestCase {
                     jsonObject: [:], statusCode: 200, headers: nil)
         })
 
-        wait(
-            for: [pauseExpectation, requestExpectation],
-            timeout: TimeInterval.seconds(30))
+        play(item: item, for: .seconds(3.2))
+
+        wait(for: [requestExpectation], timeout: .seconds(30))
     }
 
     private func check(request: URLRequest) {

@@ -32,20 +32,8 @@ class NetworkResponseTestCase: AnalyticsTestCase {
 
     func performPlayback() {
         let item = findResource(name: "1_000Events")
-        player.replaceCurrentItem(with: item)
-        player.play()
 
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-        DispatchQueue.concurrent.asyncAfter(
-            deadline: .now() + .seconds(3),
-            execute: {
-                self.player.pause()
-                self.player.replaceCurrentItem(with: nil)
-                pauseExpectation.fulfill()
-        })
-
-        wait(for: [pauseExpectation], timeout: .seconds(10))
+        play(item: item, for: .seconds(3))
     }
 
     func stubRequests(withStatusCode statusCode: Int32) {
@@ -56,19 +44,19 @@ class NetworkResponseTestCase: AnalyticsTestCase {
                 jsonObject: [:],
                 statusCode: statusCode, headers: nil)
         })
-        wait(for: configuration.submissionTimeInterval)
+        wait(for: configuration.submissionTimeInterval + 5)
     }
 
     func checkEventsInDatabase(
         isEmpty: Bool, file: StaticString = #file, line: UInt = #line
-        ) {
+    ) {
         let fetchExpectation = self.expectation(
             description: "Fetch expectation.")
         analytics.debugger.objects(for: .event, completion: { events in
             let noEvents = events.count == 0
             XCTAssert(
                 noEvents == isEmpty,
-                "EventsCheckFailed",
+                "Events check failed",
                 file: file,
                 line: line)
             fetchExpectation.fulfill()
