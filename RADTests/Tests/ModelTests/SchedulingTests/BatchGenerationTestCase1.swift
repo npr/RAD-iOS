@@ -40,7 +40,7 @@ class BatchGenerationTestCase1: AnalyticsTestCase, RADExtractionTestCase {
             description: "Player did pause.")
         player.replaceCurrentItem(with: item)
         player.play()
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(3.2), execute: {
                 self.player.pause()
                 pauseExpectation.fulfill()

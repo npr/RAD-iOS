@@ -47,7 +47,7 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
                 self.analytics.debugger.addListeningObserver(expectation)
                 self.player.play()
         })
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(20), execute: {
                 self.player.pause()
         })
@@ -70,17 +70,17 @@ class AnalyticsDebuggerExtractPayloadTestCase: AnalyticsTestCase, MD5Checkable {
 
         let waitExpectation = self.expectation(description: "Second pause.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(5), execute: {
                 self.player.pause()
 
-                DispatchQueue.background.asyncAfter(
+                DispatchQueue.concurrent.asyncAfter(
                     deadline: .now() + .seconds(5),
                     execute: {
                         self.analytics.debugger.removeListeningObserver(
                             expectation)
                         self.player.play()
-                        DispatchQueue.background.asyncAfter(
+                        DispatchQueue.concurrent.asyncAfter(
                             deadline: .now() + .seconds(5),
                             execute: {
                                 self.player.pause()

@@ -153,6 +153,8 @@
 		FF380F0F217DEE0B0029A4D2 /* FoundationOperationDependencyTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380F0E217DEE0B0029A4D2 /* FoundationOperationDependencyTestCase.swift */; };
 		FF380F11217DF3BB0029A4D2 /* NSStringMD5TestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380F10217DF3BB0029A4D2 /* NSStringMD5TestSuite.swift */; };
 		FF380F13217DF7270029A4D2 /* MD5_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = FF380F12217DF7270029A4D2 /* MD5_JSON.json */; };
+		FF41629421AC3B0B0075D3DF /* NetworkResponseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41629321AC3B0B0075D3DF /* NetworkResponseTestCase.swift */; };
+		FF41629621AC3C3B0075D3DF /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41629521AC3C3B0075D3DF /* XCTestCase+Wait.swift */; };
 		FF48622020CAA7B700B996C6 /* CMTimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48621F20CAA7B700B996C6 /* CMTimeFormatterTests.swift */; };
 		FF48622220CAAACA00B996C6 /* TimeComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48622120CAAACA00B996C6 /* TimeComponentsTests.swift */; };
 		FF48622520CAB10700B996C6 /* Double+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48622420CAB10700B996C6 /* Double+Equality.swift */; };
@@ -422,6 +424,8 @@
 		FF380F0E217DEE0B0029A4D2 /* FoundationOperationDependencyTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationOperationDependencyTestCase.swift; sourceTree = "<group>"; };
 		FF380F10217DF3BB0029A4D2 /* NSStringMD5TestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStringMD5TestSuite.swift; sourceTree = "<group>"; };
 		FF380F12217DF7270029A4D2 /* MD5_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MD5_JSON.json; sourceTree = "<group>"; };
+		FF41629321AC3B0B0075D3DF /* NetworkResponseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseTestCase.swift; sourceTree = "<group>"; };
+		FF41629521AC3C3B0075D3DF /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		FF48621F20CAA7B700B996C6 /* CMTimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTimeFormatterTests.swift; sourceTree = "<group>"; };
 		FF48622120CAAACA00B996C6 /* TimeComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeComponentsTests.swift; sourceTree = "<group>"; };
 		FF48622420CAB10700B996C6 /* Double+Equality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Equality.swift"; sourceTree = "<group>"; };
@@ -805,6 +809,7 @@
 			children = (
 				FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */,
 				FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */,
+				FF41629521AC3C3B0075D3DF /* XCTestCase+Wait.swift */,
 			);
 			path = XCTest;
 			sourceTree = "<group>";
@@ -850,14 +855,15 @@
 		FF4A048721906240003A466B /* SchedulingTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF4A048821906369003A466B /* SimpleTestCaseFullScheduling.swift */,
-				FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */,
 				FF31AFAC21A2F32B00F7A252 /* BatchGenerationTestCase1.swift */,
+				FF0777D6219F0A8F000C63CC /* ConvertTimeRangeTestCase.swift */,
 				FF31AFAE21A303A500F7A252 /* ClientCodeClassCleanupTestCase.swift */,
-				FF31AFB021A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift */,
-				FF31AFB221A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift */,
 				FF31AFB421A3048E00F7A252 /* InformationalCodeClassCleanupTestCase.swift */,
+				FF41629321AC3B0B0075D3DF /* NetworkResponseTestCase.swift */,
 				FF31AFB621A304AA00F7A252 /* RedirectionCodeClassCleanupTestCase.swift */,
+				FF31AFB221A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift */,
+				FF4A048821906369003A466B /* SimpleTestCaseFullScheduling.swift */,
+				FF31AFB021A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift */,
 			);
 			path = SchedulingTests;
 			sourceTree = "<group>";
@@ -1547,6 +1553,7 @@
 				FF84B90F2187396900D48755 /* MockPlayer.swift in Sources */,
 				FFFA0CB220AF0BEA007D1F9C /* RADTests.swift in Sources */,
 				FF219439217F46EC003417FF /* ClosureInputOperationTestSuite.swift in Sources */,
+				FF41629421AC3B0B0075D3DF /* NetworkResponseTestCase.swift in Sources */,
 				FF48622220CAAACA00B996C6 /* TimeComponentsTests.swift in Sources */,
 				FF380EF9217DC80C0029A4D2 /* XCTest+MessageOption.swift in Sources */,
 				FF219446217F4F80003417FF /* ReverseBooleanOperation.swift in Sources */,
@@ -1561,6 +1568,7 @@
 				FF380F0D217DEB870029A4D2 /* RangeReplaceableCollectionTestSuite.swift in Sources */,
 				FF2193EF217F0528003417FF /* OperationIsExecutingTestCase.swift in Sources */,
 				FF380F0F217DEE0B0029A4D2 /* FoundationOperationDependencyTestCase.swift in Sources */,
+				FF41629621AC3C3B0075D3DF /* XCTestCase+Wait.swift in Sources */,
 				FF31AFB321A3045C00F7A252 /* ServerCodeClassCleanupTestCase.swift in Sources */,
 				FF2240CE218B269300F749EE /* ItemSessionRangesTestCase.swift in Sources */,
 				FF12408221885FB900EA1060 /* TimeRangeControllerTestSuite.swift in Sources */,

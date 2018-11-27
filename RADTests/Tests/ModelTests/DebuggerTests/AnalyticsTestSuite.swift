@@ -32,10 +32,10 @@ class AnalyticsTestSuite: AnalyticsTestCase {
 
         self.player.play()
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(5), execute: {
                 self.player.replaceCurrentItem(with: nil)
-                DispatchQueue.background.asyncAfter(
+                DispatchQueue.concurrent.asyncAfter(
                     deadline: .now() + .seconds(2), execute: {
                         self.analytics.performBackgroundFetch { _ in
                             expectation.fulfill()

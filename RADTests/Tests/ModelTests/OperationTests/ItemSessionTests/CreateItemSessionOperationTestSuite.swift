@@ -31,7 +31,7 @@ RADExtractionTestCase {
         let pauseExpectation = self.expectation(
             description: "Player did pause.")
 
-        DispatchQueue.background.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
             self.player.pause()
             pauseExpectation.fulfill()
         }

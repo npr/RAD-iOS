@@ -28,7 +28,7 @@ RangeCreationExpectationBuilder {
         player.play()
         let expectation = self.expectation(
             description: "Player did pause.")
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(10),
             execute: {
                 self.player.pause()
@@ -52,7 +52,7 @@ RangeCreationExpectationBuilder {
         let rangeCreationExpectation = buildRangeCreationExpectation()
         rangeCreationExpectation.expectedFulfillmentCount = 2
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2),
             execute: {
                 let time = CMTime(
@@ -62,7 +62,7 @@ RangeCreationExpectationBuilder {
                 seekExpectation.fulfill()
         })
 
-        DispatchQueue.background.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + 5.0) {
             self.player.pause()
         }
 

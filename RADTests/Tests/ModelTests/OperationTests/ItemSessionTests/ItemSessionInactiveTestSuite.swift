@@ -30,7 +30,7 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let pauseExpectation = self.expectation(
             description: "Player did pause.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(5), execute: {
                 self.player.pause()
                 pauseExpectation.fulfill()
@@ -39,7 +39,7 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2), execute: {
                 guard let md5 = self.extractMD5(from: item) else {
                     XCTFail("Unable to create MD5 from RAD payload.")
@@ -66,13 +66,13 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(15), execute: {
                 self.player.pause()
                 self.player.replaceCurrentItem(with: nil)
                 itemReplacedExpectation.fulfill()
 
-                DispatchQueue.background.asyncAfter(deadline: .now() + .seconds(2)) {
+                DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
                     guard let md5 = self.extractMD5(from: item) else {
                         XCTFail("Unable to create MD5 from RAD payload.")
                         return

@@ -29,7 +29,7 @@ class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let fetchExpectation = self.expectation(
             description: "Rad fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(1), execute: {
                 guard let md5 = self.extractMD5(from: item) else {
                     XCTFail("Unable to created MD5 from RAD payload.")
@@ -54,13 +54,13 @@ class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2), execute: {
                 self.player.pause()
                 self.player.replaceCurrentItem(with: nil)
                 itemReplacedExpectation.fulfill()
 
-                DispatchQueue.background.asyncAfter(
+                DispatchQueue.concurrent.asyncAfter(
                     deadline: .now() + .seconds(2), execute: {
                         guard let md5 = self.extractMD5(from: item) else {
                             XCTFail("Unable to create MD5 from RAD payload.")

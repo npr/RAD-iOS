@@ -1,5 +1,5 @@
 //
-//  RedirectionCodeClassCleanupTestCase.swift
+//  XCTestCase+Wait.swift
 //  RADTests
 //
 //  Copyright 2018 NPR
@@ -17,10 +17,13 @@
 
 import XCTest
 
-class RedirectionCodeClassCleanupTestCase: NetworkResponseTestCase {
-    func testRedirectionClassResponseCheck() {
-        performPlayback()
-        stubRequests(withStatusCode: 300)
-        checkEventsInDatabase(isEmpty: false)
+extension XCTestCase {
+    func wait(for timeout: TimeInterval) {
+        let expectation = self.expectation(description: "Time did pass.")
+        DispatchQueue.concurrent.asyncAfter(
+            deadline: .now() + timeout, execute: {
+                expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: timeout)
     }
 }

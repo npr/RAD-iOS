@@ -59,12 +59,12 @@ class ItemSessionRangesTestCase: AnalyticsTestCase, RADExtractionTestCase {
         let pauseExpectation = self.expectation(
             description: "Pause on second 10.")
 
-        DispatchQueue.background.asyncAfter(deadline: .now() + .seconds(5)) {
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(5)) {
             let time = CMTime(
                 seconds: 7.0, preferredTimescale: CMTime.TimeScale.podcast)
             self.player.seek(to: time)
             seekExpectation.fulfill()
-            DispatchQueue.background.asyncAfter(
+            DispatchQueue.concurrent.asyncAfter(
                 deadline: .now() + .seconds(3),
                 execute: {
                     self.player.pause()
