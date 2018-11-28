@@ -240,6 +240,8 @@
 		FFC50CBB2181DACF00748BA9 /* TimezonedDate+ObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC50CBA2181DACF00748BA9 /* TimezonedDate+ObjectConvertible.swift */; };
 		FFD0D71820F8CEF6009FD005 /* Date+Now.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0D71720F8CEF6009FD005 /* Date+Now.swift */; };
 		FFD0D71A20F8D6B7009FD005 /* DateComponents+NegativeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0D71920F8D6B7009FD005 /* DateComponents+NegativeOperator.swift */; };
+		FFE53A8D21AE876F00FA5DF4 /* SanityCheckTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53A8C21AE876F00FA5DF4 /* SanityCheckTestCase.swift */; };
+		FFE53A8F21AE8A0600FA5DF4 /* XCTestCase+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE53A8E21AE8A0600FA5DF4 /* XCTestCase+Resource.swift */; };
 		FFE8B56A20E6599C0038A53B /* NetworkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8B56920E6599C0038A53B /* NetworkScheduler.swift */; };
 		FFE8B56E20E659DE0038A53B /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8B56D20E659DE0038A53B /* RequestBuilder.swift */; };
 		FFE8B57220E6604B0038A53B /* URLRequest+HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8B57120E6604B0038A53B /* URLRequest+HttpMethod.swift */; };
@@ -507,6 +509,8 @@
 		FFC50CBA2181DACF00748BA9 /* TimezonedDate+ObjectConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimezonedDate+ObjectConvertible.swift"; sourceTree = "<group>"; };
 		FFD0D71720F8CEF6009FD005 /* Date+Now.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Now.swift"; sourceTree = "<group>"; };
 		FFD0D71920F8D6B7009FD005 /* DateComponents+NegativeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+NegativeOperator.swift"; sourceTree = "<group>"; };
+		FFE53A8C21AE876F00FA5DF4 /* SanityCheckTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityCheckTestCase.swift; sourceTree = "<group>"; };
+		FFE53A8E21AE8A0600FA5DF4 /* XCTestCase+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Resource.swift"; sourceTree = "<group>"; };
 		FFE8B56920E6599C0038A53B /* NetworkScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScheduler.swift; sourceTree = "<group>"; };
 		FFE8B56D20E659DE0038A53B /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		FFE8B57120E6604B0038A53B /* URLRequest+HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+HttpMethod.swift"; sourceTree = "<group>"; };
@@ -652,6 +656,7 @@
 				FF2EBFE82183455C00BDDE4C /* EntitiesTests */,
 				FF2193E9217EFFF8003417FF /* OperationTests */,
 				FF4A048721906240003A466B /* SchedulingTests */,
+				FFE53A8C21AE876F00FA5DF4 /* SanityCheckTestCase.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -798,6 +803,7 @@
 			children = (
 				FF380EF6217DC7E70029A4D2 /* XCTest+OptionalEqual.swift */,
 				FF380EF8217DC80C0029A4D2 /* XCTest+MessageOption.swift */,
+				FFE53A8E21AE8A0600FA5DF4 /* XCTestCase+Resource.swift */,
 				FF41629521AC3C3B0075D3DF /* XCTestCase+Wait.swift */,
 			);
 			path = XCTest;
@@ -1524,10 +1530,12 @@
 				FFA0C1AD2191EC0D00D684AA /* AnalyticsDebuggerExtractPayloadTestCase.swift in Sources */,
 				FF84B9122187595800D48755 /* SaveOperationTestCase.swift in Sources */,
 				FF380EF7217DC7E70029A4D2 /* XCTest+OptionalEqual.swift in Sources */,
+				FFE53A8D21AE876F00FA5DF4 /* SanityCheckTestCase.swift in Sources */,
 				FF219451217F626F003417FF /* ParseJSONOperationTestSuite.swift in Sources */,
 				FF31AFB121A3044900F7A252 /* SuccessCodeClassCleanupTestCase.swift in Sources */,
 				FF5D6F7E218C57EB00A3B8FF /* RangeCreationExpectationBuilder.swift in Sources */,
 				FF380EFB217DC8550029A4D2 /* Inversable.swift in Sources */,
+				FFE53A8F21AE8A0600FA5DF4 /* XCTestCase+Resource.swift in Sources */,
 				FF154FAB2180A5E300E60011 /* DispatchQueue+Queues.swift in Sources */,
 				FF21944A217F56B8003417FF /* WaitOperationTestCase.swift in Sources */,
 				FF380EF4217DBBAD0029A4D2 /* DateComponentsTestCase.swift in Sources */,

@@ -79,21 +79,6 @@ class AnalyticsTestCase: OperationTestCase {
         wait(for: .seconds(5))
     }
 
-    func findResource(
-        name: String,
-        extension: String = "mp3",
-        file: StaticString = #file,
-        line: UInt = #line
-    ) -> AVPlayerItem! {
-        guard let url = Bundle.testBundle.url(
-            forResource: name, withExtension: `extension`
-        ) else {
-            XCTFail("Resource is not available", file: file, line: line)
-            return nil
-        }
-        return AVPlayerItem(url: url)
-    }
-
     func play(
         item: AVPlayerItem?,
         for time: TimeInterval,
