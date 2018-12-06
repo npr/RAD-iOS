@@ -1,5 +1,5 @@
 //
-//  GeneratedEventsTests.swift
+//  RedirectionCodeClassCleanupTestCase.swift
 //  RADTests
 //
 //  Copyright 2018 NPR
@@ -16,11 +16,11 @@
 //
 
 import XCTest
-import AVFoundation
-@testable import RAD
 
-class GeneratedEventsTests: AnalyticsTestCase {
-    override var playerClass: AVPlayer.Type {
-        return Player.self
+class RedirectionCodeClassCleanupTestCase: NetworkResponseTestCase {
+    func testRedirectionClassResponseCheck() {
+        performPlayback()
+        stubRequests(withStatusCode: 300)
+        checkEventsInDatabase(isEmpty: false)
     }
 }

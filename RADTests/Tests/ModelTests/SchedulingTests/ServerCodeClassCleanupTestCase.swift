@@ -1,5 +1,5 @@
 //
-//  StorageTests.swift
+//  ServerCodeClassCleanupTestCase.swift
 //  RADTests
 //
 //  Copyright 2018 NPR
@@ -16,16 +16,11 @@
 //
 
 import XCTest
-import AVFoundation
-import CoreData
-@testable import RAD
 
-class StorageTests: AnalyticsTestCase {
-    private var timeoutDelta: TimeInterval {
-        return 10
-    }
-
-    override var playerClass: AVPlayer.Type {
-        return Player.self
+class ServerCodeClassCleanupTestCase: NetworkResponseTestCase {
+    func testServerClassResponseCheck() {
+        performPlayback()
+        stubRequests(withStatusCode: 500)
+        checkEventsInDatabase(isEmpty: false)
     }
 }

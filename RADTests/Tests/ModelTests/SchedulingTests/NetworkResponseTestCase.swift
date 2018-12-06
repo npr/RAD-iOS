@@ -1,5 +1,5 @@
 //
-//  SimpleTestCaseFullScheduling.swift
+//  NetworkResponseTestCase.swift
 //  RADTests
 //
 //  Copyright 2018 NPR
@@ -17,44 +17,51 @@
 
 import XCTest
 import AVFoundation
-@testable import RAD
 import OHHTTPStubs
+@testable import RAD
 
-class SimpleTestCaseFullScheduling: AnalyticsTestCase {
+class NetworkResponseTestCase: AnalyticsTestCase {
     override var configuration: Configuration {
         return Configuration(
-            submissionTimeInterval: TimeInterval.seconds(15),
+            submissionTimeInterval: .seconds(15),
             batchSize: 10,
-            expirationTimeInterval: DateComponents(day: 14),
-            sessionExpirationTimeInterval: TimeInterval.hours(24),
+            expirationTimeInterval: DateComponents(day: 1),
+            sessionExpirationTimeInterval: .hours(24),
             requestHeaderFields: [:])
     }
 
-    func testScheduling() {
-        let item: AVPlayerItem! = findResource(name: "50Events")
+    func performPlayback() {
+        let item = findResource(name: "1_000Events")
 
-        OHHTTPStubs.stubRequests(passingTest: { request -> Bool in
-            return request.url?.absoluteString == "https://www.npr.org"
-        }, withStubResponse: { _ -> OHHTTPStubsResponse in
+        play(item: item, for: .seconds(3))
+    }
+
+    func stubRequests(withStatusCode statusCode: Int32) {
+        OHHTTPStubs.stubRequests(passingTest: { _ in
+            return true
+        }, withStubResponse: { request -> OHHTTPStubsResponse in
             return OHHTTPStubsResponse(
-                jsonObject: [:], statusCode: 200, headers: nil)
+                jsonObject: [:],
+                statusCode: statusCode, headers: nil)
         })
+        wait(for: configuration.submissionTimeInterval + 5)
+    }
 
-        play(item: item, for: .seconds(4))
-        let waitExpectation = self.expectation(description: "Waiting.")
-
-        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(20)) {
-            waitExpectation.fulfill()
-        }
-
-        wait(for: [waitExpectation], timeout: .seconds(30))
-
+    func checkEventsInDatabase(
+        isEmpty: Bool, file: StaticString = #file, line: UInt = #line
+    ) {
         let fetchExpectation = self.expectation(
             description: "Fetch expectation.")
         analytics.debugger.objects(for: .event, completion: { events in
-            XCTAssert(events.count == 0, "")
+            let noEvents = events.count == 0
+            XCTAssert(
+                noEvents == isEmpty,
+                "Events check failed",
+                file: file,
+                line: line)
             fetchExpectation.fulfill()
         })
+
         wait(for: [fetchExpectation], timeout: .seconds(10))
     }
 }

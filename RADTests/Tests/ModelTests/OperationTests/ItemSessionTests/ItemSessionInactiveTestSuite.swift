@@ -21,32 +21,15 @@ import AVFoundation
 
 class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     func testCaseFor_itemSessionIsActiveDuringPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "RAD_events",
-            withExtension: "m4a"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
+        let item: AVPlayerItem! = findResource(
+            name: "RAD_events", extension: "m4a")
 
-        let item = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: item)
-
-        player.play()
-
-        let pauseExpectation = self.expectation(
-            description: "Player did pause.")
-
-        DispatchQueue.background.asyncAfter(
-            deadline: .now() + .seconds(5), execute: {
-                self.player.pause()
-                pauseExpectation.fulfill()
-        })
+        play(item: item, for: .seconds(5), shouldWait: false)
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2), execute: {
                 guard let md5 = self.extractMD5(from: item) else {
                     XCTFail("Unable to create MD5 from RAD payload.")
@@ -56,49 +39,25 @@ class ItemSessionInactiveTestSuite: AnalyticsTestCase, RADExtractionTestCase {
                     andFulfill: fetchExpectation, for: md5)
         })
 
-        wait(
-            for: [pauseExpectation, fetchExpectation],
-            timeout: TimeInterval.minutes(1))
+        wait(for: [fetchExpectation], timeout: .minutes(1))
     }
 
     func testCaseFor_itemSessionIsInactiveAfterPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls",
-            withExtension: "mp3"
-        ) else {
-                XCTFail("Resource not available.")
-                return
-        }
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
 
-        let item = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: item)
-
-        player.play()
-
-        let itemReplacedExpectation = self.expectation(
-            description: "Player did replace item.")
+        play(item: item, for: .seconds(15))
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(2)) {
+            guard let md5 = self.extractMD5(from: item) else {
+                XCTFail("Unable to create MD5 from RAD payload.")
+                return
+            }
+            self.expectInactiveSessions(fulfilling: fetchExpectation, for: md5)
+        }
 
-        DispatchQueue.background.asyncAfter(
-            deadline: .now() + .seconds(15), execute: {
-                self.player.pause()
-                self.player.replaceCurrentItem(with: nil)
-                itemReplacedExpectation.fulfill()
-
-                DispatchQueue.background.asyncAfter(deadline: .now() + .seconds(2)) {
-                    guard let md5 = self.extractMD5(from: item) else {
-                        XCTFail("Unable to create MD5 from RAD payload.")
-                        return
-                    }
-                    self.expectInactiveSessions(fulfilling: fetchExpectation, for: md5)
-                }
-        })
-
-        wait(
-            for: [itemReplacedExpectation, fetchExpectation],
-            timeout: TimeInterval.minutes(1))
+        wait(for: [fetchExpectation], timeout: .minutes(1))
     }
 
     // MARK: Private functionality

@@ -18,6 +18,7 @@
 import XCTest
 import AVFoundation
 import CoreData
+import OHHTTPStubs
 @testable import RAD
 
 class AnalyticsTestCase: OperationTestCase {
@@ -28,6 +29,17 @@ class AnalyticsTestCase: OperationTestCase {
     /// - always: The detabase is deleted after each test.
     enum DatabaseCleanupRule {
         case none, once, always
+    }
+
+    var reportingUrls: [String] {
+        return ["https://www.npr.org"]
+    }
+
+    var checkUrlClosure: OHHTTPStubsTestBlock {
+        return { request in
+            guard let url = request.url?.absoluteString else { return false }
+            return self.reportingUrls.firstIndex(of: url) != nil
+        }
     }
 
     lazy var player: AVPlayer = {
@@ -60,6 +72,39 @@ class AnalyticsTestCase: OperationTestCase {
         analytics = Analytics(configuration: configuration)
         analytics.observePlayer(player)
     }
+
+    override func tearDown() {
+        super.tearDown()
+
+        wait(for: .seconds(5))
+    }
+
+    func play(
+        item: AVPlayerItem?,
+        for time: TimeInterval,
+        shouldWait: Bool = true
+    ) {
+        player.replaceCurrentItem(with: item)
+        player.play()
+
+        var expectation: XCTestExpectation?
+        if shouldWait {
+            expectation = self.expectation(description: "Play expectation.")
+        }
+
+        DispatchQueue.concurrent.asyncAfter(
+            deadline: .now() + .seconds(time), execute: {
+                self.player.pause()
+                self.player.replaceCurrentItem(with: nil)
+                expectation?.fulfill()
+        })
+
+        if shouldWait, let expectation = expectation {
+            wait(for: [expectation], timeout: .seconds(time * 2))
+        }
+    }
+
+    // MARK: Private functionality
 
     private func applyDatabaseDeleteRule() {
         switch databaseCleanupRule {

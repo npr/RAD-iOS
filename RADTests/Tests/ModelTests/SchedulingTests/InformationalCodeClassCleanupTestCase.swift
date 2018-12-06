@@ -1,5 +1,5 @@
 //
-//  ParsingTests.swift
+//  InformationalCodeClassCleanupTestCase.swift
 //  RADTests
 //
 //  Copyright 2018 NPR
@@ -16,16 +16,11 @@
 //
 
 import XCTest
-import AVFoundation
-@testable import RAD
 
-private typealias StringValueJSON = [String: String]
-private typealias StringValueJSONArray = [StringValueJSON]
-
-class ParsingTests: AnalyticsTestCase {
-    override func tearDown() {
-        super.tearDown()
-
-        player.replaceCurrentItem(with: nil)
+class InformationalCodeClassCleanupTestCase: NetworkResponseTestCase {
+    func testInformationalClassResponseCheck() {
+        performPlayback()
+        stubRequests(withStatusCode: 100)
+        checkEventsInDatabase(isEmpty: false)
     }
 }

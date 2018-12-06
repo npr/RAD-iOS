@@ -21,7 +21,7 @@ import AVFoundation
 
 class PlayerTestCase: XCTestCase {
     var resourceName: String {
-        return "50Events2TrackingUrls"
+        return "50Events"
     }
 
     var resourceExtension: String {
@@ -50,6 +50,7 @@ class PlayerTestCase: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         item = nil
     }
 }

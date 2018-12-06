@@ -22,13 +22,7 @@ import AVFoundation
 
 class ItemSessionRangesTestCase: AnalyticsTestCase, RADExtractionTestCase {
     func testCreationOfRanges() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "100Events2TrackingUrls", withExtension: "mp3"
-        ) else {
-                XCTFail("Asset is not available.")
-                return
-        }
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "100Events")
 
         guard let context = Storage.shared?.backgroundQueueContext else {
             XCTFail("Database is not available.")
@@ -65,12 +59,12 @@ class ItemSessionRangesTestCase: AnalyticsTestCase, RADExtractionTestCase {
         let pauseExpectation = self.expectation(
             description: "Pause on second 10.")
 
-        DispatchQueue.background.asyncAfter(deadline: .now() + .seconds(5)) {
+        DispatchQueue.concurrent.asyncAfter(deadline: .now() + .seconds(5)) {
             let time = CMTime(
                 seconds: 7.0, preferredTimescale: CMTime.TimeScale.podcast)
             self.player.seek(to: time)
             seekExpectation.fulfill()
-            DispatchQueue.background.asyncAfter(
+            DispatchQueue.concurrent.asyncAfter(
                 deadline: .now() + .seconds(3),
                 execute: {
                     self.player.pause()

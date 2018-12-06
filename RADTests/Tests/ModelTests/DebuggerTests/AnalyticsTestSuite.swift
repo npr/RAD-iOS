@@ -24,15 +24,7 @@ class AnalyticsTestSuite: AnalyticsTestCase {
         analytics.stopSendingData()
         analytics.startSendingData()
 
-        guard let url = Bundle.testBundle.url(
-            forResource: "1_000Events2TrackingUrls",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource is not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "1_000Events")
         player.replaceCurrentItem(with: item)
 
         let expectation = self.expectation(
@@ -40,10 +32,10 @@ class AnalyticsTestSuite: AnalyticsTestCase {
 
         self.player.play()
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(5), execute: {
                 self.player.replaceCurrentItem(with: nil)
-                DispatchQueue.background.asyncAfter(
+                DispatchQueue.concurrent.asyncAfter(
                     deadline: .now() + .seconds(2), execute: {
                         self.analytics.performBackgroundFetch { _ in
                             expectation.fulfill()

@@ -41,7 +41,7 @@ struct TimeComponents {
 
         let time = Measurement<UnitDuration>(value: timeInterval, unit: .seconds)
         let computedHours = time.converted(to: .hours)
-        let hours =  roundingMeasurement(computedHours)
+        let hours = roundingMeasurement(computedHours)
         let computedMinutes = (computedHours - hours).converted(to: .minutes)
         let minutes = roundingMeasurement(computedMinutes)
         let computedMilliseconds = (computedMinutes - minutes).converted(

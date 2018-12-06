@@ -21,15 +21,7 @@ import AVFoundation
 
 class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
     func testCaseFor_radIsUnlocked_duringPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "180Events2TrackingUrls",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
-
-        let item = AVPlayerItem(url: url)
+        let item: AVPlayerItem! = findResource(name: "180Events")
         player.replaceCurrentItem(with: item)
 
         player.play()
@@ -37,7 +29,7 @@ class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         let fetchExpectation = self.expectation(
             description: "Rad fetch.")
 
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(1), execute: {
                 guard let md5 = self.extractMD5(from: item) else {
                     XCTFail("Unable to created MD5 from RAD payload.")
@@ -48,48 +40,28 @@ class RadIDUnlockedTestSuite: AnalyticsTestCase, RADExtractionTestCase {
         })
 
         wait(for: [fetchExpectation], timeout: TimeInterval.seconds(5))
+
+        player.replaceCurrentItem(with: nil)
     }
 
     func testCaseFor_radIsUnlocked_afterPlayback() {
-        guard let url = Bundle.testBundle.url(
-            forResource: "240Events2TrackingUrls",
-            withExtension: "mp3"
-        ) else {
-            XCTFail("Resource not available.")
-            return
-        }
+        let item: AVPlayerItem! = findResource(name: "240Events")
 
-        let item = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: item)
-
-        player.play()
-
-        let itemReplacedExpectation = self.expectation(
-            description: "Player did replace item.")
+        play(item: item, for: .seconds(2))
 
         let fetchExpectation = self.expectation(
             description: "Item session fetch.")
-
-        DispatchQueue.background.asyncAfter(
+        DispatchQueue.concurrent.asyncAfter(
             deadline: .now() + .seconds(2), execute: {
-                self.player.pause()
-                self.player.replaceCurrentItem(with: nil)
-                itemReplacedExpectation.fulfill()
-
-                DispatchQueue.background.asyncAfter(
-                    deadline: .now() + .seconds(2), execute: {
-                        guard let md5 = self.extractMD5(from: item) else {
-                            XCTFail("Unable to create MD5 from RAD payload.")
-                            return
-                        }
-                        self.expectUnlockedRad(
-                            andFulfill: fetchExpectation, for: md5)
-                })
+                guard let md5 = self.extractMD5(from: item) else {
+                    XCTFail("Unable to create MD5 from RAD payload.")
+                    return
+                }
+                self.expectUnlockedRad(
+                    andFulfill: fetchExpectation, for: md5)
         })
 
-        wait(
-            for: [itemReplacedExpectation, fetchExpectation],
-            timeout: TimeInterval.seconds(10))
+        wait(for: [fetchExpectation], timeout: .seconds(10))
     }
 
     func testCaseFor_unavailableResource() {
