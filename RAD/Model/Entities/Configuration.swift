@@ -17,7 +17,7 @@
 
 import Foundation
 
-public class Configuration {
+@objc public class Configuration: NSObject {
     /// The time interval upon which events are sent to analytics server.
     public let submissionTimeInterval: TimeInterval
 
@@ -47,5 +47,6 @@ public class Configuration {
         self.expirationTimeInterval = expirationTimeInterval
         self.sessionExpirationTimeInterval = sessionExpirationTimeInterval
         self.requestHeaderFields = requestHeaderFields
+        super.init()
     }
 }
