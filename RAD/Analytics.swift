@@ -19,7 +19,7 @@ import Foundation
 import AVFoundation
 
 /// The Analytics object which ties the framework components.
-public class Analytics {
+@objc public class Analytics: NSObject {
     public typealias BackgroundFetchCompletion =
         (UIBackgroundFetchResult) -> Void
 
@@ -61,6 +61,7 @@ public class Analytics {
         Storage.shared?.load()
         _debugger = AnalyticsDebugger()
         scheduler = NetworkScheduler(configuration: configuration)
+        super.init()
         startSendingData()
         performSanityCheck()
     }
