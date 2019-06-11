@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "RAD"
-  s.version       = "1.1.0"
+  s.version       = "1.2.0"
   s.summary       = "The RAD SDK is a great starting place to learn more about how a RAD implementation might work in your client app."
 
   s.description   = "Remote Audio Data (RAD) measures podcast listening across a range of participating clients and platforms, aggregating the data in a publishers’ analytics endpoint. RAD is not intended to replace download statistics as a point of measurement for the on-demand audio industry, but is designed to provide data on listening events to complement this download statistics.
