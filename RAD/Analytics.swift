@@ -50,7 +50,7 @@ import AVFoundation
     /// - *request header fields*: [:] - empty dictionary.
     ///
     /// - Parameter configuration: The configuration object.
-    public init(
+    @objc public init(
         configuration: Configuration = Configuration(
             submissionTimeInterval: TimeInterval.hours(1),
             batchSize: 100,
@@ -79,7 +79,7 @@ import AVFoundation
     /// ```
     ///
     /// - Parameter player: The player to be observed.
-    public func observePlayer(_ player: AVPlayer) {
+    @objc public func observePlayer(_ player: AVPlayer) {
         playerObserver = PlayerObserver(
             player: player, configuration: configuration)
         playerObserver?.delegate = _debugger
@@ -87,12 +87,12 @@ import AVFoundation
 
     /// Starts sending data to analytics servers.
     /// Sending data is started automatically at object creation.
-    public func startSendingData() {
+    @objc public func startSendingData() {
         scheduler.startScheduling()
     }
 
     /// Stops sending data to analytics servers.
-    public func stopSendingData() {
+    @objc public func stopSendingData() {
         scheduler.endScheduling()
     }
 
@@ -101,7 +101,7 @@ import AVFoundation
     /// calls the completion handler on the main queue.
     ///
     /// - Parameter completion: The completion handler.
-    public func performBackgroundFetch(
+    @objc public func performBackgroundFetch(
         completion: @escaping BackgroundFetchCompletion
     ) {
         scheduler.executeDataSent { result in

@@ -35,7 +35,7 @@ import Foundation
     /// request created to each tracking url.
     public let requestHeaderFields: [String: String]
 
-    public init(
+    @objc public init(
         submissionTimeInterval: TimeInterval,
         batchSize: UInt,
         expirationTimeInterval: DateComponents,
