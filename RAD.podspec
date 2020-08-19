@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.source_files  = "RAD/**/*.{h,m,swift}"
   s.resource      = "RAD/Model/RADDatabaseModel.xcdatamodeld"
   s.frameworks    = "Foundation", "AVFoundation", "CoreMedia", "CoreData"
-  s.dependency "ReachabilitySwift"
+  s.dependency "ReachabilitySwift", "~> 4.3"
   s.swift_version = "4.2"
 end

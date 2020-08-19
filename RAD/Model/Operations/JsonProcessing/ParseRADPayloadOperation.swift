@@ -31,8 +31,8 @@ class ParseRADPayloadOperation: OutputOperation<String> {
             asset.availableMetadataFormats.reduce([:], { result, format in
                 var new = result
                 let formatMetadata = asset.metadata(forFormat: format)
-                formatMetadata.forEach({
-                    new[format.rawValue] = $0.stringValue
+                formatMetadata.enumerated().forEach({
+                    new[String($0.offset)] = $0.element.stringValue
                 })
                 return new
             })
